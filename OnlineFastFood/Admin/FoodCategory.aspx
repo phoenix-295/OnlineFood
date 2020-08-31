@@ -8,28 +8,28 @@
         </tr>
         <tr>
             <td colspan="3" style="height: 106px">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CatId" PageSize="2" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#C6A674" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Cat_ID" PageSize="2" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#C6A674" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting">
                     <Columns>
                         <asp:TemplateField HeaderText="Category Title">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtnameedit" runat="server" Text='<%# Eval("CatName") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtnameedit" runat="server" Text='<%# Eval("Cat_Title") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="txtnameadd" runat="server"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblname" runat="server" Text='<%# Eval("CatName") %>'></asp:Label>
+                                <asp:Label ID="lblname" runat="server" Text='<%# Eval("Cat_title") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Category Description">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtdescedit" runat="server" Text='<%# Eval("CatDesc") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtdescedit" runat="server" Text='<%# Eval("Cat_Desc") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="txtdescadd" runat="server"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbldesc" runat="server" Text='<%# Eval("CatDesc") %>'></asp:Label>
+                                <asp:Label ID="lbldesc" runat="server" Text='<%# Eval("Cat_desc") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Operations">
