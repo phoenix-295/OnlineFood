@@ -9,7 +9,7 @@
         <tr>
             <td class="text-center" colspan="3" style="font-size: 18px; color: #000000"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
                 </span></td>
-        </tr>
+        </tr> 
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 27px;"><span style="color: #000000">IItem Name</span></td>
             <td style="height: 27px; width: 919px">
