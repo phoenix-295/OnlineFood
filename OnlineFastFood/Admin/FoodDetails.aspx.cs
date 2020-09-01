@@ -89,8 +89,8 @@ namespace OnlineFastFood.Admin
             cmd.Parameters.AddWithValue("@a", txtitemname.Text);
             cmd.Parameters.AddWithValue("@b", cat_dropdown.SelectedValue);
             cmd.Parameters.AddWithValue("@c", txtitemdetails.Text);
-            cmd.Parameters.AddWithValue("@d", "~/Styles/small/" + filetitle);
-            cmd.Parameters.AddWithValue("@e", "~/Styles/large/" + filetitle1);
+            cmd.Parameters.AddWithValue("@d",  filetitle);
+            cmd.Parameters.AddWithValue("@e",  filetitle1);
             cmd.Parameters.AddWithValue("@f", txtwas.Text);
             cmd.Parameters.AddWithValue("@g", txtnow.Text);
             
@@ -120,6 +120,8 @@ namespace OnlineFastFood.Admin
                     if (fileSizeInKb <= 1024)
                     {
                         FileUpload1.SaveAs(Server.MapPath("~/Styles/small/" + filetitle));
+
+                        filetitle = "~/Styles/small/" + filetitle;
                     }
                     else
                     {
@@ -136,6 +138,15 @@ namespace OnlineFastFood.Admin
                 Response.Write("Please upload an image");
             }
             
+        }
+
+        protected void gv1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string Uid = gv1.DataKeys[e.RowIndex].Values["Item_Code"].ToString();
+
+            //Label item_code = (Label)gv1.Rows[e.RowIndex].FindControl("Label7");
+            Session["itemcode"] = Uid.ToString();
+            Response.Redirect("Food_CategoryEdit.aspx");
         }
 
         protected void largeimg()
@@ -156,6 +167,8 @@ namespace OnlineFastFood.Admin
                     if (fileSizeInKb <= 4024)
                     {
                         FileUpload2.SaveAs(Server.MapPath("~/Styles/large/" + filetitle1));
+
+                        filetitle1 = "~/Styles/large/" + filetitle1;
                     }
                     else
                     {

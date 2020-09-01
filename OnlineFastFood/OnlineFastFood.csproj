@@ -93,6 +93,7 @@
     <Content Include="Admin\AdminHome.aspx" />
     <Content Include="Admin\FoodCategory.aspx" />
     <Content Include="Admin\FoodDetails.aspx" />
+    <Content Include="Admin\Food_CategoryEdit.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Customer\CustomerHome.aspx" />
     <Content Include="HomePage1.aspx" />
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="Admin\FoodDetails.aspx.designer.cs">
       <DependentUpon>FoodDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Food_CategoryEdit.aspx.cs">
+      <DependentUpon>Food_CategoryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Food_CategoryEdit.aspx.designer.cs">
+      <DependentUpon>Food_CategoryEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerHome.aspx.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>

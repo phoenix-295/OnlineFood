@@ -70,7 +70,7 @@
                 <asp:Button ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
             </td>
             <td style="font-size: 18px; color: #000000; width: 919px">
-                <asp:Button ID="Button2" runat="server" Text="Clear" style="font-size: 18px" />
+                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" />
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -82,7 +82,7 @@
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
             <td style="text-align:center; align-content:center; font-size: 18px; width: 919px" >
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" >
+                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" >
                     <Columns>
                         <asp:TemplateField HeaderText="Item Name">
                             <ItemTemplate>
@@ -106,10 +106,22 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Now Price">
                             <ItemTemplate>
-                                <asp:Label ID="lblwasprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label>
+                                <asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Operations"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Operations">
+                            <EditItemTemplate>
+                                <asp:Button ID="btnupdate" runat="server" CommandName="Update" Text="Update" />
+                                <asp:Button ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" />
+                            </EditItemTemplate>
+                            <FooterTemplate>
+                                <asp:Button ID="btnaddnew" runat="server" CommandName="AddNew" Text="Add New" />
+                            </FooterTemplate>
+                            <ItemTemplate>
+                                <asp:Button ID="btnedit" runat="server" CommandName="Update" Text="Edit" />
+                                <asp:Button ID="btndelete" runat="server" CommandName="Delete" Text="Delete" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <HeaderStyle BackColor="#C6A674" />
                     <PagerStyle BackColor="#C6A674" />
