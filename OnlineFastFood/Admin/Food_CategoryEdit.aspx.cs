@@ -95,12 +95,13 @@ namespace OnlineFastFood.Admin
                 filetitle1 = "~/Styles/large/" + filetitle1;
             }
 
+            string itemcode = Session["itemcode"].ToString();
             string s1;
                 s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); ;
                 MySqlConnection conn = new MySqlConnection(s1);
 
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT into food_details(Item_Name,Cat_ID,Item_Details,Image1,Image2,Was_Price,Now_Price) values (@a,@b,@c,@d,@e,@f,@g)", conn);
+                MySqlCommand cmd = new MySqlCommand("UPDATE food_details SET Item_Name=@a,Cat_ID=@b,Item_Details=@c,Image1=@d,Image2=@e,Was_Price=@f,Now_Price=@g where Item_Code=@ic", conn);
                 cmd.Parameters.AddWithValue("@a", txtitemname.Text);
                 cmd.Parameters.AddWithValue("@b", cat_dropdown.SelectedValue);
                 cmd.Parameters.AddWithValue("@c", txtitemdetails.Text);
@@ -108,13 +109,11 @@ namespace OnlineFastFood.Admin
                 cmd.Parameters.AddWithValue("@e",  filetitle1);
                 cmd.Parameters.AddWithValue("@f", txtwas.Text);
                 cmd.Parameters.AddWithValue("@g", txtnow.Text);
+                cmd.Parameters.AddWithValue("@ic", itemcode);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
-              //  lblmsg.BackColor = Color.Green;
-              //  lblmsg.ForeColor = Color.White;
-              // lblmsg.Text = "Added Successfully";
-              //Fillgv();
+            Response.Redirect("FoodDetails.aspx");
         }
 
             protected void smallimg()

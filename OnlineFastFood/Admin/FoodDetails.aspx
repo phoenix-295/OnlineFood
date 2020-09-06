@@ -106,7 +106,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Now Price">
                             <ItemTemplate>
-                                <asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label>
+                                <asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Now_Price") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Operations">
