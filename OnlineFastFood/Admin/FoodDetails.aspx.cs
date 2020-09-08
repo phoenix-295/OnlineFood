@@ -146,7 +146,7 @@ namespace OnlineFastFood.Admin
 
             //Label item_code = (Label)gv1.Rows[e.RowIndex].FindControl("Label7");
             Session["itemcode"] = Uid.ToString();
-            Response.Redirect("Food_CategoryEdit.aspx");
+            Response.Redirect("Food_Details_Edit.aspx");
         }
 
         protected void largeimg()

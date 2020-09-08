@@ -1,14 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="OnlineFastFood.LoginPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SuperAdminMaster.master.cs" Inherits="OnlineFastFood.SuperAdmin.SuperAdminMaster" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
-    
-    <meta charset="utf-8"/>
+    <title>Admin Panel</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,11 +22,14 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .auto-style1 {
-            width: 192px;
+        .auto-style2 {
+            width: 1166px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
         }
-    </style>
-
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,9 +52,9 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="HomePage.aspx" class="active">Home</a></li>
-								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>																
+								<li role="presentation"><a href="../HomePage1.aspx">Home</a></li>
+								<li role="presentation"><a href="../Admin/AdminHome.aspx">Admin</a></li>
+								<li role="presentation"><a href="../Customer/CustomerHome.aspx">Customer</a></li>																
 								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
 							</ul>
 						</div>
@@ -79,10 +81,10 @@
 								<img src="img/3.jpg" class="img-responsive" alt=""> 
 						   </div>
 						   <div class="item">
-								<img src="img/3.jpg" class="img-responsive" alt=""> 
+								<img src="img/about-us.jpg" class="img-responsive" alt=""> 
 						   </div> 
 						   <div class="item">
-								<img src="img/3.jpg" class="img-responsive" alt=""> 
+								<img src="img/4.jpg" class="img-responsive" alt=""> 
 						   </div> 
 						</div>
 						
@@ -100,29 +102,28 @@
 	</div>
 	
 	<section id="about">
-        <div class="container">
-           
 
-            <table class="nav-justified">
-                <tr>
-                    <td class="auto-style1">
-                        <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black">
-                        </asp:Login>
-                        </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-            </table>
-           
+        <div class="auto-style2">
+
+            <asp:Menu ID="Menu1" runat="server" BackColor="#DAB273" CssClass="auto-style3" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt">
+                <Items>
+                    <asp:MenuItem NavigateUrl="~/Admin/AdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                    <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/SuperAdmin/Food_Category.aspx" Text="Add Food Category" Value="Category"></asp:MenuItem>
+                    <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/SuperAdmin/Admin_Regestration.aspx" Text="Register Admin" Value="Food Details"></asp:MenuItem>
+                    <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
 
         </div><!--/.container-->
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div><!--/.container-->
     </section><!--/#about-->
-	
-	
-	
-	
-			
-	
+
 
 	<footer>
 		<div class="container">

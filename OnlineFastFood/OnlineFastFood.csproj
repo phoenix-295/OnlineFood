@@ -93,12 +93,15 @@
     <Content Include="Admin\AdminHome.aspx" />
     <Content Include="Admin\FoodCategory.aspx" />
     <Content Include="Admin\FoodDetails.aspx" />
-    <Content Include="Admin\Food_CategoryEdit.aspx" />
+    <Content Include="Admin\Food_Details_Edit.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Customer\CustomerHome.aspx" />
     <Content Include="HomePage1.aspx" />
     <Content Include="index.html" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="SuperAdmin\Admin_Regestration.aspx" />
+    <Content Include="SuperAdmin\Food_Category.aspx" />
+    <Content Include="SuperAdmin\SAdminHome.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -132,12 +135,12 @@
     <Compile Include="Admin\FoodDetails.aspx.designer.cs">
       <DependentUpon>FoodDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Food_CategoryEdit.aspx.cs">
-      <DependentUpon>Food_CategoryEdit.aspx</DependentUpon>
+    <Compile Include="Admin\Food_Details_Edit.aspx.cs">
+      <DependentUpon>Food_Details_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Food_CategoryEdit.aspx.designer.cs">
-      <DependentUpon>Food_CategoryEdit.aspx</DependentUpon>
+    <Compile Include="Admin\Food_Details_Edit.aspx.designer.cs">
+      <DependentUpon>Food_Details_Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerHome.aspx.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
@@ -168,6 +171,34 @@
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuperAdmin\Admin_Regestration.aspx.cs">
+      <DependentUpon>Admin_Regestration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\Admin_Regestration.aspx.designer.cs">
+      <DependentUpon>Admin_Regestration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\Food_Category.aspx.cs">
+      <DependentUpon>Food_Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\Food_Category.aspx.designer.cs">
+      <DependentUpon>Food_Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\SAdminHome.aspx.cs">
+      <DependentUpon>SAdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\SAdminHome.aspx.designer.cs">
+      <DependentUpon>SAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\SuperAdminMaster.Master.cs">
+      <DependentUpon>SuperAdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\SuperAdminMaster.Master.designer.cs">
+      <DependentUpon>SuperAdminMaster.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Web.config" />
@@ -175,6 +206,7 @@
     <Content Include="HomeMaster.Master" />
     <Content Include="Admin\AdminMaster.Master" />
     <None Include="packages.config" />
+    <Content Include="SuperAdmin\SuperAdminMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

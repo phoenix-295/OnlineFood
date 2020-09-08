@@ -10,7 +10,7 @@
 namespace OnlineFastFood.Admin {
     
     
-    public partial class Food_CategoryEdit {
+    public partial class Food_Details_Edit {
         
         /// <summary>
         /// txtitemname control.
