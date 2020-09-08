@@ -1,0 +1,7 @@
+63858
+
+
+iisexpress.exe /path:"C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAdminFiles" /vpath:"/WebAdmin" /port:63858 /clr:4.0 /ntlm
+
+
+http://localhost:63858/WebAdmin/default.aspx?applicationPhysicalPath=D:\FastFoodGit\OnlineFood\OnlineFastFood&applicationUrl=/AppAdmin
