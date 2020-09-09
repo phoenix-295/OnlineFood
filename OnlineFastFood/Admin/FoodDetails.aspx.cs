@@ -57,7 +57,7 @@ namespace OnlineFastFood.Admin
         protected void Fillgv()
         {
             string s1, s2;
-            s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); ;
+            s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); 
             s2 = "SELECT * FROM food_details";
             MySqlConnection conn1;
             conn1 = new MySqlConnection(s1);
@@ -147,6 +147,15 @@ namespace OnlineFastFood.Admin
             //Label item_code = (Label)gv1.Rows[e.RowIndex].FindControl("Label7");
             Session["itemcode"] = Uid.ToString();
             Response.Redirect("Food_Details_Edit.aspx");
+        }
+
+        protected void btnclear_Click(object sender, EventArgs e)
+        {
+            txtitemname.Text = "";
+            txtitemdetails.Text = "";
+            txtnow.Text = "";
+            txtwas.Text = "";
+            cat_dropdown.SelectedValue = "1";
         }
 
         protected void largeimg()

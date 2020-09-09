@@ -66,13 +66,13 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">
+            <td style="font-size: 18px; color: #000000; width: 205px; height: 33px;">
                 <asp:Button ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
             </td>
-            <td style="font-size: 18px; color: #000000; width: 919px">
-                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" />
+            <td style="font-size: 18px; color: #000000; width: 919px; height: 33px;">
+                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" OnClick="btnclear_Click" />
             </td>
-            <td>&nbsp;</td>
+            <td style="height: 33px"></td>
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 22px;"></td>

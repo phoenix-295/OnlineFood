@@ -19,6 +19,7 @@ namespace OnlineFastFood.Admin
             {
                 FilloiceMasterInv();
                 FillDrop();
+                //cat_dropdown.SelectedIndex = '5';
             }
         }
 
@@ -37,8 +38,8 @@ namespace OnlineFastFood.Admin
 
             cat_dropdown.DataBind();
             ViewState["vsFoodCategory"] = ds;
-            int index1 = Convert.ToInt32(ic) - 1;
-            cat_dropdown.SelectedIndex = index1;
+            //int index1 = Convert.ToInt32(ic) - 1;
+            //cat_dropdown.SelectedIndex = index1;
             conn.Close();
         }
 
@@ -58,7 +59,7 @@ namespace OnlineFastFood.Admin
                 if ((r1["Item_Code"].ToString() == itemcode))
                 {
                     txtitemname.Text = r1["Item_Name"].ToString();
-                    ic = r1["Cat_ID"].ToString();
+                    cat_dropdown.SelectedValue = r1["Cat_ID"].ToString();
                     txtitemdetails.Text = r1["Item_Details"].ToString();
                     Image1.ImageUrl = r1["Image1"].ToString();
                     Image2.ImageUrl = r1["Image2"].ToString();

@@ -180,5 +180,10 @@ namespace OnlineFastFood.Admin
                 FillGv();
             }
         }
+
+        protected void GridView1_Sorting(object sender, GridViewSortEventArgs e)
+        {
+
+        }
     }
 }
