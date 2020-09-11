@@ -14,6 +14,9 @@
             <td style="font-size: 18px; color: #000000; width: 205px; height: 27px;"><span style="color: #000000">IItem Name</span></td>
             <td style="height: 27px; width: 919px">
                 <asp:TextBox ID="txtitemname" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <strong>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtitemname" ErrorMessage="Item Name Cannot Be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
+                </strong>
             </td>
             <td style="height: 27px"></td>
         </tr>
@@ -29,34 +32,65 @@
             <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Item details</span></td>
             <td style="width: 919px">
                 <asp:TextBox ID="txtitemdetails" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <strong>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtitemdetails" ErrorMessage="Item Details Field cannot be empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
+                </strong>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Image 1</span></td>
             <td style="width: 919px">
+                <table class="nav-justified">
+                    <tr>
+                        <td style="width: 313px">
                 <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" />
+                        </td>
+                        <td>
+                            <strong>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Image 1 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
+                            </strong></td>
+                    </tr>
+                </table>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">IImage 2</td>
             <td style="width: 919px">
+                <table class="nav-justified">
+                    <tr>
+                        <td style="width: 313px">
                 <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" />
+                        </td>
+                        <td>
+                            <strong>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FileUpload2" ErrorMessage="Image 2 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
+                            </strong></td>
+                    </tr>
+                </table>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">Was Price</td>
-            <td style="width: 919px">
+            <td style="font-size: 18px; color: #000000; width: 205px; height: 23px;">Was Price</td>
+            <td style="width: 919px; height: 23px;">
                 <asp:TextBox ID="txtwas" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <strong>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtwas" ErrorMessage="Was Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtwas" ErrorMessage="Invalid Was price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
+                </strong>
             </td>
-            <td>&nbsp;</td>
+            <td style="height: 23px"></td>
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">Now Price</td>
             <td style="width: 919px">
                 <asp:TextBox ID="txtnow" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <strong>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtnow" ErrorMessage="Now Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtnow" ErrorMessage="Invalid Now Price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
+                </strong>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -70,7 +104,7 @@
                 <asp:Button ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
             </td>
             <td style="font-size: 18px; color: #000000; width: 919px; height: 33px;">
-                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" OnClick="btnclear_Click" />
+                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" OnClick="btnclear_Click" CausesValidation="False" />
             </td>
             <td style="height: 33px"></td>
         </tr>
@@ -118,8 +152,8 @@
                                 <asp:Button ID="btnaddnew" runat="server" CommandName="AddNew" Text="Add New" />
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Button ID="btnedit" runat="server" CommandName="Update" Text="Edit" />
-                                <asp:Button ID="btndelete" runat="server" CommandName="Delete" Text="Delete" />
+                                <asp:Button ID="btnedit" runat="server" CommandName="Update" Text="Edit" CausesValidation="False" />
+                                <asp:Button ID="btndelete" runat="server" CommandName="Delete" Text="Delete" CausesValidation="False" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -131,7 +165,9 @@
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 22px;"></td>
-            <td style="font-size: 18px; width: 919px; height: 22px;"></td>
+            <td style="font-size: 18px; width: 919px; height: 22px;">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color: #FF0000" />
+            </td>
             <td style="height: 22px"></td>
         </tr>
         <tr>

@@ -52,7 +52,7 @@
 								<li role="presentation"><a href="HomePage1.aspx" class="active">Home</a></li>
 								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
 								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>																
-								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
+								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>					
 							</ul>
 						</div>
 					</div>						

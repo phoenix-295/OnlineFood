@@ -96,6 +96,7 @@
     <Content Include="Admin\Food_Details_Edit.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Customer\CustomerHome.aspx" />
+    <Content Include="Cust_regestration.aspx" />
     <Content Include="HomePage1.aspx" />
     <Content Include="index.html" />
     <Content Include="LoginPage.aspx" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="Customer\CustomerHome.aspx.designer.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cust_regestration.aspx.cs">
+      <DependentUpon>Cust_regestration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cust_regestration.aspx.designer.cs">
+      <DependentUpon>Cust_regestration.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomeMaster.Master.cs">
       <DependentUpon>HomeMaster.Master</DependentUpon>
@@ -207,6 +215,7 @@
     <Content Include="Admin\AdminMaster.Master" />
     <None Include="packages.config" />
     <Content Include="SuperAdmin\SuperAdminMaster.Master" />
+    <Content Include="SuperAdmin\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

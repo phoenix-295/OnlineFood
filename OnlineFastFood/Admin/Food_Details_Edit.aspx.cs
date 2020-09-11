@@ -12,62 +12,75 @@ namespace OnlineFastFood.Admin
 {
     public partial class Food_Details_Edit : System.Web.UI.Page
     {
-        string ic, filetitle, filetitle1;
+        string filetitle, filetitle1;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 FilloiceMasterInv();
-                FillDrop();
-                //cat_dropdown.SelectedIndex = '5';
+                FillDrop();              
             }
         }
 
         protected void FillDrop()
         {
-            string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
-            string s2 = "SELECT * FROM food_category";
-            MySqlConnection conn = new MySqlConnection(strcon);
-            conn.Open();
-            MySqlDataAdapter da1 = new MySqlDataAdapter(s2, strcon);
-            DataSet ds = new DataSet();
-            da1.Fill(ds, "food_cat");
-            cat_dropdown.DataSource = ds.Tables["food_cat"].DefaultView;
-            cat_dropdown.DataTextField = "Cat_Title";
-            cat_dropdown.DataValueField = "Cat_ID";
+            try
+            {
+                string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
+                string s2 = "SELECT * FROM food_category";
+                MySqlConnection conn = new MySqlConnection(strcon);
+                conn.Open();
+                MySqlDataAdapter da1 = new MySqlDataAdapter(s2, strcon);
+                DataSet ds = new DataSet();
+                da1.Fill(ds, "food_cat");
+                cat_dropdown.DataSource = ds.Tables["food_cat"].DefaultView;
+                cat_dropdown.DataTextField = "Cat_Title";
+                cat_dropdown.DataValueField = "Cat_ID";
 
-            cat_dropdown.DataBind();
-            ViewState["vsFoodCategory"] = ds;
-            //int index1 = Convert.ToInt32(ic) - 1;
-            //cat_dropdown.SelectedIndex = index1;
-            conn.Close();
+                cat_dropdown.DataBind();
+                ViewState["vsFoodCategory"] = ds;
+                //int index1 = Convert.ToInt32(ic) - 1;
+                //cat_dropdown.SelectedIndex = index1;
+                conn.Close();
+            }
+            catch (Exception x)
+            {
+                Response.Write(x);
+            }
         }
 
         protected void FilloiceMasterInv()
         {
-            string itemcode = Session["itemcode"].ToString();
-            string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
-            MySqlConnection con = new MySqlConnection(strcon);
-            con.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM  food_details", con);
-            DataSet ds1 = new DataSet();
-            da.Fill(ds1, "t1");
-
-
-            foreach (DataRow r1 in ds1.Tables["t1"].Rows)
+            try
             {
-                if ((r1["Item_Code"].ToString() == itemcode))
+                string itemcode = Session["itemcode"].ToString();
+                string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
+                MySqlConnection con = new MySqlConnection(strcon);
+                con.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM  food_details", con);
+                DataSet ds1 = new DataSet();
+                da.Fill(ds1, "t1");
+
+
+                foreach (DataRow r1 in ds1.Tables["t1"].Rows)
                 {
-                    txtitemname.Text = r1["Item_Name"].ToString();
-                    cat_dropdown.SelectedValue = r1["Cat_ID"].ToString();
-                    txtitemdetails.Text = r1["Item_Details"].ToString();
-                    Image1.ImageUrl = r1["Image1"].ToString();
-                    Image2.ImageUrl = r1["Image2"].ToString();
-                    txtwas.Text = r1["Was_Price"].ToString();
-                    txtnow.Text = r1["Now_price"].ToString();
+                    if ((r1["Item_Code"].ToString() == itemcode))
+                    {
+                        txtitemname.Text = r1["Item_Name"].ToString();
+                        cat_dropdown.SelectedValue = r1["Cat_ID"].ToString();
+                        txtitemdetails.Text = r1["Item_Details"].ToString();
+                        Image1.ImageUrl = r1["Image1"].ToString();
+                        Image2.ImageUrl = r1["Image2"].ToString();
+                        txtwas.Text = r1["Was_Price"].ToString();
+                        txtnow.Text = r1["Now_price"].ToString();
+                    }
                 }
+                con.Close();
             }
-            con.Close();
+            catch (Exception x)
+            {
+                Response.Write(x);
+            }
 
         }
 
@@ -77,117 +90,143 @@ namespace OnlineFastFood.Admin
             smallimg();
 
             largeimg();
-
-            if (filetitle == "")
+            try
             {
-                filetitle = Image1.ImageUrl;
+
+                if (filetitle == "")
+                {
+                    filetitle = Image1.ImageUrl;
+                }
+                else
+                {
+                    filetitle = "~/Styles/small/" + filetitle;
+                }
+
+                if (filetitle1 == "")
+                {
+                    filetitle1 = Image1.ImageUrl;
+                }
+                else
+                {
+                    filetitle1 = "~/Styles/large/" + filetitle1;
+                }
+
+                string itemcode = Session["itemcode"].ToString();
+                string s1;
+                s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); ;
+                MySqlConnection conn = new MySqlConnection(s1);
+
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("UPDATE food_details SET Item_Name=@a,Cat_ID=@b,Item_Details=@c,Image1=@d,Image2=@e,Was_Price=@f,Now_Price=@g where Item_Code=@ic", conn);
+                cmd.Parameters.AddWithValue("@a", txtitemname.Text);
+                cmd.Parameters.AddWithValue("@b", cat_dropdown.SelectedValue);
+                cmd.Parameters.AddWithValue("@c", txtitemdetails.Text);
+                cmd.Parameters.AddWithValue("@d", filetitle);
+                cmd.Parameters.AddWithValue("@e", filetitle1);
+                cmd.Parameters.AddWithValue("@f", txtwas.Text);
+                cmd.Parameters.AddWithValue("@g", txtnow.Text);
+                cmd.Parameters.AddWithValue("@ic", itemcode);
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                Response.Redirect("FoodDetails.aspx");
             }
-            else
+            catch (Exception x)
             {
-                filetitle = "~/Styles/small/" + filetitle;
+                Response.Write(x);
             }
+        }
 
-            if (filetitle1 == "")
-            {
-                filetitle1 = Image1.ImageUrl;
-            }
-            else
-            {
-                filetitle1 = "~/Styles/large/" + filetitle1;
-            }
-
-            string itemcode = Session["itemcode"].ToString();
-            string s1;
-            s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); ;
-            MySqlConnection conn = new MySqlConnection(s1);
-
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE food_details SET Item_Name=@a,Cat_ID=@b,Item_Details=@c,Image1=@d,Image2=@e,Was_Price=@f,Now_Price=@g where Item_Code=@ic", conn);
-            cmd.Parameters.AddWithValue("@a", txtitemname.Text);
-            cmd.Parameters.AddWithValue("@b", cat_dropdown.SelectedValue);
-            cmd.Parameters.AddWithValue("@c", txtitemdetails.Text);
-            cmd.Parameters.AddWithValue("@d", filetitle);
-            cmd.Parameters.AddWithValue("@e", filetitle1);
-            cmd.Parameters.AddWithValue("@f", txtwas.Text);
-            cmd.Parameters.AddWithValue("@g", txtnow.Text);
-            cmd.Parameters.AddWithValue("@ic", itemcode);
-
-            cmd.ExecuteNonQuery();
-            conn.Close();
+        protected void btnclear_Click(object sender, EventArgs e)
+        {
             Response.Redirect("FoodDetails.aspx");
         }
 
         protected void smallimg()
         {
-            string fileName = FileUpload1.PostedFile.FileName;
-            string fileExtension = System.IO.Path.GetExtension(fileName);
-            string fileMimeType = FileUpload1.PostedFile.ContentType;
-            int fileSizeInKb = FileUpload1.PostedFile.ContentLength / 1024;
-            filetitle = FileUpload1.FileName;
-
-            string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
-            string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
-
-            if (FileUpload1.HasFile)
+            try
             {
-                if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
+                string fileName = FileUpload1.PostedFile.FileName;
+                string fileExtension = System.IO.Path.GetExtension(fileName);
+                string fileMimeType = FileUpload1.PostedFile.ContentType;
+                int fileSizeInKb = FileUpload1.PostedFile.ContentLength / 1024;
+                filetitle = FileUpload1.FileName;
+
+                string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
+                string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
+
+                if (FileUpload1.HasFile)
                 {
-                    if (fileSizeInKb <= 1024)
+                    if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
                     {
-                        FileUpload1.SaveAs(Server.MapPath("~/Styles/small/" + filetitle));
+                        if (fileSizeInKb <= 1024)
+                        {
+                            FileUpload1.SaveAs(Server.MapPath("~/Styles/small/" + filetitle));
+                        }
+                        else
+                        {
+                            Response.Write("File size greater than 1 MB");
+
+                            filetitle = "~/Styles/small/" + filetitle;
+                        }
                     }
                     else
                     {
-                        Response.Write("File size greater than 1 MB");
-
-                        filetitle = "~/Styles/small/" + filetitle;
+                        Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
                     }
                 }
                 else
                 {
-                    Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
+                    Response.Write("Please upload an image");
                 }
             }
-            else
+            catch (Exception x)
             {
-                Response.Write("Please upload an image");
+                Response.Write(x);
             }
 
         }
         protected void largeimg()
         {
-            string fileName = FileUpload2.PostedFile.FileName;
-            string fileExtension = System.IO.Path.GetExtension(fileName);
-            string fileMimeType = FileUpload2.PostedFile.ContentType;
-            int fileSizeInKb = FileUpload2.PostedFile.ContentLength / 1024;
-            filetitle1 = FileUpload2.FileName;
-
-            string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
-            string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
-
-            if (FileUpload2.HasFile)
+            try
             {
-                if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
-                {
-                    if (fileSizeInKb <= 4024)
-                    {
-                        FileUpload2.SaveAs(Server.MapPath("~/Styles/large/" + filetitle1));
+                string fileName = FileUpload2.PostedFile.FileName;
+                string fileExtension = System.IO.Path.GetExtension(fileName);
+                string fileMimeType = FileUpload2.PostedFile.ContentType;
+                int fileSizeInKb = FileUpload2.PostedFile.ContentLength / 1024;
+                filetitle1 = FileUpload2.FileName;
 
-                        filetitle1 = "~/Styles/large/" + filetitle1;
+                string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
+                string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
+
+                if (FileUpload2.HasFile)
+                {
+                    if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
+                    {
+                        if (fileSizeInKb <= 4024)
+                        {
+                            FileUpload2.SaveAs(Server.MapPath("~/Styles/large/" + filetitle1));
+
+                            filetitle1 = "~/Styles/large/" + filetitle1;
+                        }
+                        else
+                        {
+                            Response.Write("File size greater than 1 MB");
+                        }
                     }
                     else
                     {
-                        Response.Write("File size greater than 1 MB");
+                        Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
                     }
                 }
                 else
                 {
-                    Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
+                    Response.Write("Please upload an image");
                 }
             }
-            else
+            catch (Exception x)
             {
-                Response.Write("Please upload an image");
+                Response.Write(x);
             }
         }
     }

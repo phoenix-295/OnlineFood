@@ -55,7 +55,7 @@
 								<li role="presentation"><a href="../HomePage1.aspx">Home</a></li>
 								<li role="presentation"><a href="../Admin/AdminHome.aspx">Admin</a></li>
 								<li role="presentation"><a href="../Customer/CustomerHome.aspx">Customer</a></li>																
-								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
+								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>						
 							</ul>
 						</div>
 					</div>						
@@ -183,7 +183,8 @@
 			
 			<div class="col-md-4 col-md-offset-4">
 				<div class="copyright">
-					&copy; Anyar 2015 All Rights Reserved | <a href="http://bootstraptaste.com/">Bootstrap Themes</a> by BootstrapTaste
+					&copy; Anyar 2015 All Rights Reserved | <a href="http://bootstraptaste.com/">Bootstrap Themes</a> by 
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" />
                     <!-- 
                         All links in the footer should remain intact. 
                         Licenseing information is available at: http://bootstraptaste.com/license/
