@@ -18,7 +18,7 @@
                                 <td>
                                     <asp:TextBox ID="txtfname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                        ControlToValidate="txtfname" ErrorMessage="First Name Shouldnt Be Blank" 
+                                        ControlToValidate="txtfname" ErrorMessage="First Name cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -28,7 +28,7 @@
                                 <td class="style12">
                                     <asp:TextBox ID="txtmname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                        ControlToValidate="txtmname" ErrorMessage="Enter Middle Name" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtmname" ErrorMessage="Middle Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -37,26 +37,28 @@
                                 <td class="style12">
                                     <asp:TextBox ID="txtlastname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                        ControlToValidate="txtlastname" ErrorMessage="Enter Last Name" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtlastname" ErrorMessage="Last Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Contact No:</td>
+                                    Mobile No:</td>
                                 <td>
                                     <asp:TextBox ID="txtcontact" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                        ControlToValidate="txtcontact" ErrorMessage="Please Enter Conact Number" 
+                                        ControlToValidate="txtcontact" ErrorMessage="Mobile Number cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtcontact" ErrorMessage="Please Enter a valid mobile number." MaximumValue="9999999999" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtcontact" ErrorMessage="Mobile Number must be 10 Digit" style="color: #FF0000" ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Adress:</td>
+                                    Address:</td>
                                 <td>
                                     <asp:TextBox ID="txtadress" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                        ControlToValidate="txtadress" ErrorMessage="Please Enter Adress" 
+                                        ControlToValidate="txtadress" ErrorMessage="Address cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -66,7 +68,7 @@
                                 <td>
                                     <asp:TextBox ID="txtloc" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                                        ControlToValidate="txtloc" ErrorMessage="Please Enter Location" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtloc" ErrorMessage="Location cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -75,7 +77,7 @@
                                 <td class="style15">
                                     <asp:TextBox ID="txtcity" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                                        ControlToValidate="txtcity" ErrorMessage="Please Enter City" 
+                                        ControlToValidate="txtcity" ErrorMessage="City cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -85,9 +87,10 @@
                                 <td>
                                     <asp:TextBox ID="txtmail" runat="server"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                                        ControlToValidate="txtmail" ErrorMessage="Enter Valid Email Adress" 
+                                        ControlToValidate="txtmail" ErrorMessage="Enter Valid Email Adress." 
                                         ForeColor="Red" 
                                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtmail" ErrorMessage="Email cannot be empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -96,7 +99,8 @@
                                 <td>
                                     <asp:TextBox ID="txtpin" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                                        ControlToValidate="txtpin" ErrorMessage="Please Enter Pin" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtpin" ErrorMessage="Pin Cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Pin must be 6 digit." style="color: #FF0000" ValidationExpression="[0-9]{6}">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                         </table>
@@ -109,7 +113,9 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color: #FF0000" />
+            </td>
             <td>&nbsp;</td>
         </tr>
     </table>

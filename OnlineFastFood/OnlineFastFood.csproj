@@ -95,14 +95,17 @@
     <Content Include="Admin\FoodDetails.aspx" />
     <Content Include="Admin\Food_Details_Edit.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
+    <Content Include="Category_UC.ascx" />
     <Content Include="Customer\CustomerHome.aspx" />
     <Content Include="Cust_regestration.aspx" />
+    <Content Include="Food_Details_Small_UC.ascx" />
     <Content Include="HomePage1.aspx" />
     <Content Include="index.html" />
     <Content Include="LoginPage.aspx" />
     <Content Include="SuperAdmin\Admin_Regestration.aspx" />
     <Content Include="SuperAdmin\Food_Category.aspx" />
     <Content Include="SuperAdmin\SAdminHome.aspx" />
+    <Content Include="test.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -143,6 +146,13 @@
     <Compile Include="Admin\Food_Details_Edit.aspx.designer.cs">
       <DependentUpon>Food_Details_Edit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Category_UC.ascx.cs">
+      <DependentUpon>Category_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category_UC.ascx.designer.cs">
+      <DependentUpon>Category_UC.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Customer\CustomerHome.aspx.cs">
       <DependentUpon>CustomerHome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,6 +166,13 @@
     </Compile>
     <Compile Include="Cust_regestration.aspx.designer.cs">
       <DependentUpon>Cust_regestration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Food_Details_Small_UC.ascx.cs">
+      <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Food_Details_Small_UC.ascx.designer.cs">
+      <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
     </Compile>
     <Compile Include="HomeMaster.Master.cs">
       <DependentUpon>HomeMaster.Master</DependentUpon>
@@ -206,6 +223,13 @@
     </Compile>
     <Compile Include="SuperAdmin\SuperAdminMaster.Master.designer.cs">
       <DependentUpon>SuperAdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

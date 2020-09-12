@@ -27,6 +27,7 @@ namespace OnlineFastFood.Admin
 
         protected void FillDrop()
         {
+            
             try
             {
                 string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
@@ -51,11 +52,12 @@ namespace OnlineFastFood.Admin
 
         protected void Fillgv()
         {
+            string muser = User.Identity.Name.ToString();
             try
             {
                 string s1, s2;
                 s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString();
-                s2 = "SELECT * FROM food_details";
+                s2 = "SELECT * FROM food_details where user1='" + muser + "'";
                 MySqlConnection conn1;
                 conn1 = new MySqlConnection(s1);
                 conn1.Open();
@@ -79,6 +81,8 @@ namespace OnlineFastFood.Admin
 
             largeimg();
 
+            string muser = User.Identity.Name.ToString();
+
             try
             {
                 string s1;
@@ -86,7 +90,7 @@ namespace OnlineFastFood.Admin
                 MySqlConnection conn = new MySqlConnection(s1);
 
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT into food_details(Item_Name,Cat_ID,Item_Details,Image1,Image2,Was_Price,Now_Price) values (@a,@b,@c,@d,@e,@f,@g)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT into food_details(Item_Name,Cat_ID,Item_Details,Image1,Image2,Was_Price,Now_Price,user1) values (@a,@b,@c,@d,@e,@f,@g,@h)", conn);
                 cmd.Parameters.AddWithValue("@a", txtitemname.Text);
                 cmd.Parameters.AddWithValue("@b", cat_dropdown.SelectedValue);
                 cmd.Parameters.AddWithValue("@c", txtitemdetails.Text);
@@ -94,6 +98,7 @@ namespace OnlineFastFood.Admin
                 cmd.Parameters.AddWithValue("@e", filetitle1);
                 cmd.Parameters.AddWithValue("@f", txtwas.Text);
                 cmd.Parameters.AddWithValue("@g", txtnow.Text);
+                cmd.Parameters.AddWithValue("@h", muser);
 
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -181,6 +186,24 @@ namespace OnlineFastFood.Admin
             catch (Exception x)
             {
                 Response.Write(x);
+            }
+        }
+
+        protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string ic = gv1.DataKeys[e.RowIndex].Values["Item_Code"].ToString();         
+            string conn;
+            conn = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString();
+            MySqlConnection ocon = new MySqlConnection(conn);
+            ocon.Open();
+            MySqlCommand cmd = new MySqlCommand("Delete from food_details where Item_Code=" + ic, ocon);
+            int res = cmd.ExecuteNonQuery();
+            gv1.EditIndex = -1;
+            cmd.ExecuteNonQuery();
+            ocon.Close();
+            if (res == 1)
+            {
+                Fillgv();
             }
         }
 

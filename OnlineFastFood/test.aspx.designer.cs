@@ -10,7 +10,7 @@
 namespace OnlineFastFood {
     
     
-    public partial class HomePage1 {
+    public partial class test {
         
         /// <summary>
         /// Food_Details_Small_UC1 control.

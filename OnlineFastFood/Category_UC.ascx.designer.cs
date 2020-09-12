@@ -10,15 +10,15 @@
 namespace OnlineFastFood {
     
     
-    public partial class HomePage1 {
+    public partial class Category_UC {
         
         /// <summary>
-        /// Food_Details_Small_UC1 control.
+        /// DataList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::OnlineFastFood.Food_Details_Small_UC Food_Details_Small_UC1;
+        protected global::System.Web.UI.WebControls.DataList DataList1;
     }
 }

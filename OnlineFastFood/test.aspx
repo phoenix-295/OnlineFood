@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeMaster.Master" AutoEventWireup="true" CodeBehind="HomePage1.aspx.cs" Inherits="OnlineFastFood.HomePage1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/HomeMaster.Master" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="OnlineFastFood.test" %>
 <%@ Register src="Food_Details_Small_UC.ascx" tagname="Food_Details_Small_UC" tagprefix="uc1" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="vertical-align:text-top; width: 921px;";>
         <table  class="nav-justified">
@@ -22,4 +20,5 @@
         </tr>
     </table>
     </div>
+    
 </asp:Content>

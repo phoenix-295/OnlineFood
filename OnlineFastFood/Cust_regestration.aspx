@@ -23,8 +23,18 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-        .auto-style1 {
+        .auto-style2 {
+            color: #FF0000;
+        }
+        .auto-style3 {
             width: 192px;
+            height: 364px;
+        }
+        .auto-style4 {
+            height: 364px;
+        }
+        .auto-style5 {
+            color: #000000;
         }
     </style>
 
@@ -50,9 +60,10 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="HomePage.aspx" class="active">Home</a></li>
+								<li role="presentation"><a href="HomePage1.aspx">Home</a></li>
 								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>																
+								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>
+                                <li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>
 								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
 							</ul>
 						</div>
@@ -105,8 +116,8 @@
 
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style1">
-                        CreateUserWizard1<asp:CreateUserWizard ID="CreateUserWizard1" runat="server" style="color: #000000" Font-Size="Medium" Height="258px" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="367px">
+                    <td class="auto-style3">
+                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser">
                     <WizardSteps>
                         <asp:WizardStep runat="server" Title="Reg">
                             <table class="style11">
@@ -116,7 +127,7 @@
                                 <td>
                                     <asp:TextBox ID="txtfname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                                        ControlToValidate="txtfname" ErrorMessage="First Name Shouldnt Be Blank" 
+                                        ControlToValidate="txtfname" ErrorMessage="First Name cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -126,7 +137,7 @@
                                 <td class="style12">
                                     <asp:TextBox ID="txtmname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                                        ControlToValidate="txtmname" ErrorMessage="Enter Middle Name" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtmname" ErrorMessage="Middle Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -135,26 +146,28 @@
                                 <td class="style12">
                                     <asp:TextBox ID="txtlastname" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                                        ControlToValidate="txtlastname" ErrorMessage="Enter Last Name" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtlastname" ErrorMessage="Last Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Contact No:</td>
+                                    Mobile No:</td>
                                 <td>
                                     <asp:TextBox ID="txtcontact" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                                        ControlToValidate="txtcontact" ErrorMessage="Please Enter Conact Number" 
+                                        ControlToValidate="txtcontact" ErrorMessage="Mobile Number cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtcontact" CssClass="auto-style2" ErrorMessage="Please enter a valid mobile number" MaximumValue="9999999999" MinimumValue="0">*</asp:RangeValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtcontact" CssClass="auto-style2" ErrorMessage="Mobile No must be 10 Digit" ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Adress:</td>
+                                    Address:</td>
                                 <td>
                                     <asp:TextBox ID="txtadress" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                                        ControlToValidate="txtadress" ErrorMessage="Please Enter Adress" 
+                                        ControlToValidate="txtadress" ErrorMessage="Address cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -164,7 +177,7 @@
                                 <td>
                                     <asp:TextBox ID="txtloc" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
-                                        ControlToValidate="txtloc" ErrorMessage="Please Enter Location" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtloc" ErrorMessage="Location cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -173,7 +186,7 @@
                                 <td class="style15">
                                     <asp:TextBox ID="txtcity" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
-                                        ControlToValidate="txtcity" ErrorMessage="Please Enter City" 
+                                        ControlToValidate="txtcity" ErrorMessage="City cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -183,9 +196,10 @@
                                 <td>
                                     <asp:TextBox ID="txtmail" runat="server"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                                        ControlToValidate="txtmail" ErrorMessage="Enter Valid Email Adress" 
+                                        ControlToValidate="txtmail" ErrorMessage="Enter Valid Email Adress." 
                                         ForeColor="Red" 
                                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtmail" CssClass="auto-style2" ErrorMessage="Email cannot be empty.">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -194,7 +208,8 @@
                                 <td>
                                     <asp:TextBox ID="txtpin" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
-                                        ControlToValidate="txtpin" ErrorMessage="Please Enter Pin" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                        ControlToValidate="txtpin" ErrorMessage="Pin Cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtpin" CssClass="auto-style2" ErrorMessage="Pin must be 6 digit." ValidationExpression="[0-9]{6}">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                         </table>
@@ -205,8 +220,17 @@
                 </asp:CreateUserWizard>
 
                         </td>
+                    <td class="auto-style4">
+                        </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="auto-style2" />
+
+                        </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:Button ID="Button1" runat="server" Text="Button" />
+                    </td>
                 </tr>
             </table>
            
@@ -223,8 +247,7 @@
 	<footer>
 		<div class="container">
 			<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-				<h4>About Us</h4>
-				<p>Anyar is tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters.</p>						
+				<h4>About Us is tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters.</p>						
 				<div class="contact-info">
 					<ul>
 						<li><i class="fa fa-home fa"></i>Suite 54 Elizebth Street, Victoria State Newyork, USA </li>

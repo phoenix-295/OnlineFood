@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeMaster.master.cs" Inherits="OnlineFastFood.HomeMaster" %>
 
+<%@ Register src="Category_UC.ascx" tagname="Category_UC" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -24,7 +26,15 @@
     <![endif]-->
     <style type="text/css">
         .auto-style1 {
-            width: 192px;
+            width: 133px;
+            color : black;
+        }
+        .auto-style2 {
+            width: 38px;
+        }
+        .style1
+        {
+            width: 100%;
         }
     </style>
 </head>
@@ -102,11 +112,17 @@
         <div class="container">
            
 
+    
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style1">&nbsp;</td>
-                    <td>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <td class="auto-style1">
+                        <uc1:Category_UC ID="Category_UC1" runat="server" />
+                    </td>
+                    <td class="style1">
+                        
+                        
+                        
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
                         </asp:ContentPlaceHolder>
                     </td>
                 </tr>

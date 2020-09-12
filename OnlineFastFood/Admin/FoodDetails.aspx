@@ -116,7 +116,7 @@
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
             <td style="text-align:center; align-content:center; font-size: 18px; width: 919px" >
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" >
+                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" OnRowDeleting="gv1_RowDeleting" >
                     <Columns>
                         <asp:TemplateField HeaderText="Item Name">
                             <ItemTemplate>
