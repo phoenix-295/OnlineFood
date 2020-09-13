@@ -5,14 +5,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="vertical-align:text-top; width: 921px;";>
         <table  class="nav-justified">
-        <tr>
-            <td>&nbsp;</td>
+        <tr style="vertical-align:top">
+            <td>
+                <uc1:Food_Details_Small_UC ID="Food_Details_Small_UC1" runat="server" />
+            </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>
-                <uc1:Food_Details_Small_UC ID="Food_Details_Small_UC1" runat="server" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>

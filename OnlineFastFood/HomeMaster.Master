@@ -109,12 +109,9 @@
 	</div>
 	
 	<section id="about">
-        <div class="container">
-           
-
-    
+        <div class="container", style="vertical-align:top">
             <table class="nav-justified">
-                <tr>
+                <tr style="vertical-align:top">
                     <td class="auto-style1">
                         <uc1:Category_UC ID="Category_UC1" runat="server" />
                     </td>
