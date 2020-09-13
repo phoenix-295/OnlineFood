@@ -84,7 +84,7 @@
                 <asp:TextBox ID="txtnow" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtnow" ErrorMessage="Now Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
-                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtnow" ErrorMessage="Invalid Now Price." MaximumValue="400" MinimumValue="0" style="color: #FF0000">*</asp:RangeValidator>
+                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtnow" ErrorMessage="Invalid Now Price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
                 </strong>
             </td>
             <td style="height: 30px"></td>
