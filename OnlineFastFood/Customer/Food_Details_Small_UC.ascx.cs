@@ -77,5 +77,43 @@ namespace OnlineFastFood.Customer
                 conn1.Close();
             }
         }
+
+        protected void DataList1_UpdateCommand(object source, DataListCommandEventArgs e)
+        {
+
+        }
+
+        protected void chkItem()
+        {
+            Label itemname1 = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("Label1");
+            Label nowprice = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("Label3");
+            LinkButton add = (LinkButton)DataList1.Items[e.Item.ItemIndex].FindControl("LinkButton1");
+            BtnArgument = add.CommandArgument.ToString();
+
+            string s1, s2;
+            s1 = ConfigurationManager.ConnectionStrings["AccessDb"].ConnectionString;
+
+            s2 = "Select * from Shopcart";
+
+            MySqlConnection conn = new MySqlConnection(s1);
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter(s2, s1);
+            DataSet ds1 = new DataSet();
+            da.Fill(ds1, "t1");
+
+            foreach (DataRow r1 in ds1.Tables["t1"].Rows)
+            {
+                if ((r1["ItemCode1"].ToString() == BtnArgument) && (r1["UserName1"].ToString() == currentuser))
+                {
+                    shocartid = r1["ShopCartId"].ToString();
+                    var1 = true;
+                }
+                else
+                {
+                    var1 = false;
+                }
+            }
+            conn.Close();
+        }
     }
 }

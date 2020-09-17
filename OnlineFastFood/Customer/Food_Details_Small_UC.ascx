@@ -6,9 +6,22 @@
     .auto-style2 {
         font-size: large;
     }
+    .auto-style3 {
+        height: 26px;
+    }
 </style>
 
-<asp:DataList ID="DataList1" runat="server" CellPadding="4" ForeColor="#333333" RepeatColumns="3" Width="657px">
+<table class="auto-style1">
+    <tr>
+        <td>
+            <asp:HyperLink ID="HyperLink2" runat="server">Items :</asp:HyperLink>
+&nbsp;<asp:Label ID="lblq" runat="server"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+<asp:DataList ID="DataList1" runat="server" CellPadding="4" ForeColor="#333333" RepeatColumns="3" Width="657px" OnUpdateCommand="DataList1_UpdateCommand">
     <AlternatingItemStyle BackColor="White" />
     <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
     <HeaderStyle BackColor="#DAB273" Font-Bold="True" ForeColor="Black" />
@@ -40,12 +53,16 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td>
+                <td class="auto-style3">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "../Customer/Food_Details_Large_UC_Display.aspx?Item_Code="+Eval("Item_Code") %>' Text='<%# Eval("Item_Name") %>'></asp:HyperLink>
                 </td>
-                <td>&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Item_Code") %>'>Add To Cart</asp:LinkButton>
+                </td>
             </tr>
         </table>
     </ItemTemplate>
     <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-</asp:DataList>
+</asp:DataList></td>
+    </tr>
+</table>
