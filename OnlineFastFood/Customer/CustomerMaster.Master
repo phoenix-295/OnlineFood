@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeMaster.master.cs" Inherits="OnlineFastFood.HomeMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerMaster.master.cs" Inherits="OnlineFastFood.Customer.CustomerMaster" %>
 
 <%@ Register src="Category_UC.ascx" tagname="Category_UC" tagprefix="uc1" %>
 
@@ -29,9 +29,6 @@
             width: 133px;
             color : black;
         }
-        .auto-style2 {
-            width: 38px;
-        }
         .style1
         {
             width: 100%;
@@ -61,7 +58,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="HomePage1.aspx" class="active">Home</a></li>
 								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Customer/Cust_Home.aspx">Customer</a></li>																
+								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>																
 								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>					
 							</ul>
 						</div>

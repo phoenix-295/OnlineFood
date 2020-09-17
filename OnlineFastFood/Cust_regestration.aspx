@@ -229,8 +229,7 @@
 
                         </td>
                     <td>
-                        <asp:Button ID="Button1" runat="server" Text="Button" />
-                    </td>
+                        &nbsp;</td>
                 </tr>
             </table>
            

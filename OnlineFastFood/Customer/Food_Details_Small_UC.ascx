@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Food_Details_Small_UC.ascx.cs" Inherits="OnlineFastFood.Food_Details_Small_UC" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Food_Details_Small_UC.ascx.cs" Inherits="OnlineFastFood.Customer.Food_Details_Small_UC" %>
 <style type="text/css">
     .auto-style1 {
         width: 100%;
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td>
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "../Food_Details_Large_UC_Display.aspx?Item_Code="+Eval("Item_Code") %>' Text='<%# Eval("Item_Name") %>'></asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "../Customer/Food_Details_Large_UC_Display.aspx?Item_Code="+Eval("Item_Code") %>' Text='<%# Eval("Item_Name") %>'></asp:HyperLink>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -49,4 +49,3 @@
     </ItemTemplate>
     <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
 </asp:DataList>
-

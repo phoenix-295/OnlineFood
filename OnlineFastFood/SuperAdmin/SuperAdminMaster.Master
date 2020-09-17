@@ -45,7 +45,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="HomePage1.aspx"><h1>Online Fast Food</h1></a>
+							<a href="../HomePage1.aspx"><h1>Online Fast Food</h1></a>
 						</div>
 					</div>
 					

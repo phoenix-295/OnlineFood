@@ -96,8 +96,14 @@
     <Content Include="Admin\Food_Details_Edit.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Category_UC.ascx" />
-    <Content Include="Customer\CustomerHome.aspx" />
+    <Content Include="Customer\Category_UC.ascx" />
+    <Content Include="Customer\Cust_Home.aspx" />
+    <Content Include="Customer\Food_Details_Large_UC.ascx" />
+    <Content Include="Customer\Food_Details_Large_UC_Display.aspx" />
+    <Content Include="Customer\Food_Details_Small_UC.ascx" />
     <Content Include="Cust_regestration.aspx" />
+    <Content Include="Food_Details_Large_UC.ascx" />
+    <Content Include="Food_Details_Large_UC_Display.aspx" />
     <Content Include="Food_Details_Small_UC.ascx" />
     <Content Include="HomePage1.aspx" />
     <Content Include="index.html" />
@@ -153,12 +159,47 @@
     <Compile Include="Category_UC.ascx.designer.cs">
       <DependentUpon>Category_UC.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerHome.aspx.cs">
-      <DependentUpon>CustomerHome.aspx</DependentUpon>
+    <Compile Include="Customer\Category_UC.ascx.cs">
+      <DependentUpon>Category_UC.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\CustomerHome.aspx.designer.cs">
-      <DependentUpon>CustomerHome.aspx</DependentUpon>
+    <Compile Include="Customer\Category_UC.ascx.designer.cs">
+      <DependentUpon>Category_UC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerMaster.Master.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerMaster.Master.designer.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Cust_Home.aspx.cs">
+      <DependentUpon>Cust_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Cust_Home.aspx.designer.cs">
+      <DependentUpon>Cust_Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Large_UC.ascx.cs">
+      <DependentUpon>Food_Details_Large_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Large_UC.ascx.designer.cs">
+      <DependentUpon>Food_Details_Large_UC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Large_UC_Display.aspx.cs">
+      <DependentUpon>Food_Details_Large_UC_Display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Large_UC_Display.aspx.designer.cs">
+      <DependentUpon>Food_Details_Large_UC_Display.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Small_UC.ascx.cs">
+      <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Food_Details_Small_UC.ascx.designer.cs">
+      <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
     </Compile>
     <Compile Include="Cust_regestration.aspx.cs">
       <DependentUpon>Cust_regestration.aspx</DependentUpon>
@@ -166,6 +207,20 @@
     </Compile>
     <Compile Include="Cust_regestration.aspx.designer.cs">
       <DependentUpon>Cust_regestration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Food_Details_Large_UC.ascx.cs">
+      <DependentUpon>Food_Details_Large_UC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Food_Details_Large_UC.ascx.designer.cs">
+      <DependentUpon>Food_Details_Large_UC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Food_Details_Large_UC_Display.aspx.cs">
+      <DependentUpon>Food_Details_Large_UC_Display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Food_Details_Large_UC_Display.aspx.designer.cs">
+      <DependentUpon>Food_Details_Large_UC_Display.aspx</DependentUpon>
     </Compile>
     <Compile Include="Food_Details_Small_UC.ascx.cs">
       <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
@@ -237,6 +292,7 @@
     <Content Include="Customer\Web.config" />
     <Content Include="HomeMaster.Master" />
     <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="Customer\CustomerMaster.Master" />
     <None Include="packages.config" />
     <Content Include="SuperAdmin\SuperAdminMaster.Master" />
     <Content Include="SuperAdmin\Web.config" />

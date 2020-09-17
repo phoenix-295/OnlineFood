@@ -26,6 +26,9 @@
         .auto-style1 {
             width: 192px;
         }
+        .auto-style2 {
+            color: #000000;
+        }
     </style>
 
 </head>
@@ -110,7 +113,8 @@
                         </asp:Login>
                         </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style2" NavigateUrl="~/Cust_regestration.aspx">Not a member? Click here to register</asp:HyperLink>
+                    </td>
                 </tr>
             </table>
            
