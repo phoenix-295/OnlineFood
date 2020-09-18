@@ -41,7 +41,7 @@
                 <table class="nav-justified">
                     <tr>
                         <td>
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" />
+                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation()"/>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
@@ -57,7 +57,7 @@
                 <table class="nav-justified">
                     <tr>
                         <td>
-                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" />
+                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation1()"/>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
@@ -128,4 +128,61 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+
+    <script type = "text/javascript">
+
+        function Filevalidation()
+        {
+             const fi = document.getElementById("<%=FileUpload1.ClientID%>"); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (const i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 1096)
+                { 
+                    alert("File too Big, please select a file less than 1mb");
+                    var x = null;
+                    document.getElementById("<%=FileUpload1.ClientID%>").value = x;
+                }
+                else
+                { 
+                    document.getElementById('size').innerHTML = '<b>'
+                        + file + '</b> KB';
+                } 
+            } 
+        } 
+
+        }
+
+        function Filevalidation1()
+        {
+             const fi = document.getElementById("<%=FileUpload2.ClientID%>"); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (const i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 1096)
+                { 
+                    alert("File too Big, please select a file less than 1mb");
+                    var x = null;
+                    document.getElementById("<%=FileUpload2.ClientID%>").value = x;
+                }
+                else
+                { 
+                    document.getElementById('size').innerHTML = '<b>'
+                        + file + '</b> KB';
+                } 
+            } 
+        } 
+
+        }
+
+    </script>
+
 </asp:Content>

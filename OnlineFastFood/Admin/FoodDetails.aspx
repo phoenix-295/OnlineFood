@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="FoodDetails.aspx.cs" Inherits="OnlineFastFood.Admin.FoodDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
+     
+
     <table class="nav-justified">
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
@@ -7,7 +10,7 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="text-center" colspan="3" style="font-size: 18px; color: #000000"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
+            <td class="text-center" colspan="3" style="font-size: 18px; color: #000000; height: 42px;"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
                 </span></td>
         </tr> 
         <tr>
@@ -44,12 +47,15 @@
                 <table class="nav-justified">
                     <tr>
                         <td style="width: 313px">
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" />
+                              
+                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation()"/>
                         </td>
                         <td>
                             <strong>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Image 1 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
-                            </strong></td>
+                            </strong>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Must Be an Image File." style="color: #FF0000" ValidationExpression="(.*?)\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$" >*</asp:RegularExpressionValidator>
+                        </td>
                     </tr>
                 </table>
             </td>
@@ -61,12 +67,14 @@
                 <table class="nav-justified">
                     <tr>
                         <td style="width: 313px">
-                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" />
+                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation1()"/>
                         </td>
                         <td>
                             <strong>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FileUpload2" ErrorMessage="Image 2 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
-                            </strong></td>
+                            </strong>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="FileUpload2" ErrorMessage="Must Be an Image File." style="color: #FF0000" ValidationExpression="(.*?)\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$">*</asp:RegularExpressionValidator>
+                        </td>
                     </tr>
                 </table>
             </td>
@@ -116,7 +124,7 @@
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
             <td style="text-align:center; align-content:center; font-size: 18px; width: 919px" >
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" OnRowDeleting="gv1_RowDeleting" AllowPaging="True" >
+                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" OnRowDeleting="gv1_RowDeleting" AllowPaging="True" OnPageIndexChanging="gv1_PageIndexChanging" PageSize="5" >
                     <Columns>
                         <asp:TemplateField HeaderText="Item Name">
                             <ItemTemplate>
@@ -178,4 +186,59 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    <script type = "text/javascript">
+
+        function Filevalidation()
+        {
+             const fi = document.getElementById("<%=FileUpload1.ClientID%>"); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (const i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 1096)
+                { 
+                    alert("File too Big, please select a file less than 1mb");
+                    var x = null;
+                    document.getElementById("<%=FileUpload1.ClientID%>").value = x;
+                }
+                else
+                { 
+                    document.getElementById('size').innerHTML = '<b>'
+                        + file + '</b> KB';
+                } 
+            } 
+        } 
+
+        }
+
+        function Filevalidation1()
+        {
+             const fi = document.getElementById("<%=FileUpload2.ClientID%>"); 
+        // Check if any file is selected. 
+        if (fi.files.length > 0) { 
+            for (const i = 0; i <= fi.files.length - 1; i++) { 
+  
+                const fsize = fi.files.item(i).size; 
+                const file = Math.round((fsize / 1024)); 
+                // The size of the file. 
+                if (file >= 1096)
+                { 
+                    alert("File too Big, please select a file less than 1mb");
+                    var x = null;
+                    document.getElementById("<%=FileUpload2.ClientID%>").value = x;
+                }
+                else
+                { 
+                    document.getElementById('size').innerHTML = '<b>'
+                        + file + '</b> KB';
+                } 
+            } 
+        } 
+
+        }
+
+    </script>
 </asp:Content>

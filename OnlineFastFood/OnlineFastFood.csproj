@@ -111,6 +111,7 @@
     <Content Include="SuperAdmin\Admin_Regestration.aspx" />
     <Content Include="SuperAdmin\Food_Category.aspx" />
     <Content Include="SuperAdmin\SAdminHome.aspx" />
+    <Content Include="SuperAdmin\Test.aspx" />
     <Content Include="test.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -278,6 +279,13 @@
     </Compile>
     <Compile Include="SuperAdmin\SuperAdminMaster.Master.designer.cs">
       <DependentUpon>SuperAdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
     <Compile Include="test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>

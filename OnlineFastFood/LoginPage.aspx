@@ -53,9 +53,10 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="HomePage.aspx" class="active">Home</a></li>
+								<li role="presentation"><a href="HomePage1.aspx">Home</a></li>
 								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Customer/CustomerHome.aspx">Customer</a></li>																
+								<li role="presentation"><a href="Customer/Cust_Home.aspx">Customer</a></li>
+                                <li role="presentation"><a class="active"></a><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>
 								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
 							</ul>
 						</div>

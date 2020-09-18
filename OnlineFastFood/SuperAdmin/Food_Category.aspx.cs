@@ -63,37 +63,21 @@ namespace OnlineFastFood.SuperAdmin
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string cid = GridView1.DataKeys[e.RowIndex].Values["Cat_ID"].ToString();
-
             TextBox incatname = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtnameedit");
-
             TextBox incatd = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtdescedit");
-
             string conn;
-
             conn = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString();
-
             MySqlConnection ocon = new MySqlConnection(conn);
-
             ocon.Open();
-
             MySqlCommand cmd = new MySqlCommand("UPDATE food_category SET Cat_Title=@ctit,Cat_Desc=@cdesc where Cat_ID=@cid", ocon);
-
             cmd.Parameters.AddWithValue("@ctit", incatname.Text);
-
             cmd.Parameters.AddWithValue("@cdesc", incatd.Text);
-
             cmd.Parameters.AddWithValue("@cid", cid);
-
             cmd.ExecuteNonQuery();
-
             ocon.Close();
-
             GridView1.EditIndex = -1;
-
             lblup.Text = "Updated Successfully";
-
             lblup.ForeColor = Color.White;
-
             lblup.BackColor = Color.Green;
 
             FillGv();

@@ -11,7 +11,8 @@ namespace OnlineFastFood.Customer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string mcurrentuser = User.Identity.Name.ToString();
+            Session["cuser"] = mcurrentuser;
         }
     }
 }

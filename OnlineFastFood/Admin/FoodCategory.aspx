@@ -8,7 +8,7 @@
         </tr>
         <tr>
             <td colspan="3" style="height: 106px">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Cat_ID" PageSize="2" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#C6A674" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnSorting="GridView1_Sorting">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Cat_ID" PageSize="5" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#C6A674" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnSorting="GridView1_Sorting">
                     <Columns>
                         <asp:TemplateField HeaderText="Category Title">
                             <EditItemTemplate>

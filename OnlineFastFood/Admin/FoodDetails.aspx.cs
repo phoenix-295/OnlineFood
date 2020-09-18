@@ -77,14 +77,15 @@ namespace OnlineFastFood.Admin
 
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
-            smallimg();
-
-            largeimg();
-
-            string muser = User.Identity.Name.ToString();
-
             try
-            {
+            { 
+
+                smallimg();
+                largeimg();
+
+                string muser = User.Identity.Name.ToString();
+
+          
                 string s1;
                 s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString(); ;
                 MySqlConnection conn = new MySqlConnection(s1);
@@ -118,33 +119,10 @@ namespace OnlineFastFood.Admin
             try
             {
                 string fileName = FileUpload1.PostedFile.FileName;
-                string fileExtension = System.IO.Path.GetExtension(fileName);
-                string fileMimeType = FileUpload1.PostedFile.ContentType;
-                int fileSizeInKb = FileUpload1.PostedFile.ContentLength / 1024;
-                filetitle = FileUpload1.FileName;
-
-                string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
-                string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
-
                 if (FileUpload1.HasFile)
-                {
-                    if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
-                    {
-                        if (fileSizeInKb <= 1024)
-                        {
-                            FileUpload1.SaveAs(Server.MapPath("~/Styles/small/" + filetitle));
-
-                            filetitle = "~/Styles/small/" + filetitle;
-                        }
-                        else
-                        {
-                            Response.Write("File size greater than 1 MB");
-                        }
-                    }
-                    else
-                    {
-                        Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
-                    }
+                {                    
+                        FileUpload1.SaveAs(Server.MapPath("~/Styles/small/" + fileName));
+                        filetitle = "~/Styles/small/" + fileName;                    
                 }
                 else
                 {
@@ -207,38 +185,24 @@ namespace OnlineFastFood.Admin
             }
         }
 
+        protected void gv1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            DataSet mydataset = (DataSet)ViewState["mydataset"];
+            DataTable myydatatable = mydataset.Tables["a"];
+            gv1.DataSource = myydatatable;
+            gv1.PageIndex = e.NewPageIndex;
+            gv1.DataBind();
+        }
+
         protected void largeimg()
         {
             try
             {
                 string fileName = FileUpload2.PostedFile.FileName;
-                string fileExtension = System.IO.Path.GetExtension(fileName);
-                string fileMimeType = FileUpload2.PostedFile.ContentType;
-                int fileSizeInKb = FileUpload2.PostedFile.ContentLength / 1024;
-                filetitle1 = FileUpload2.FileName;
-
-                string[] MatchExtension = { ".jpg", ".jpeg", ".png", ".gif" };
-                string[] MatchMimeType = { "image/jpeg", "image/gif", "image/png" };
-
                 if (FileUpload2.HasFile)
-                {
-                    if (MatchExtension.Contains(fileExtension) || MatchMimeType.Contains(fileMimeType))
-                    {
-                        if (fileSizeInKb <= 4024)
-                        {
-                            FileUpload2.SaveAs(Server.MapPath("~/Styles/large/" + filetitle1));
-
-                            filetitle1 = "~/Styles/large/" + filetitle1;
-                        }
-                        else
-                        {
-                            Response.Write("File size greater than 1 MB");
-                        }
-                    }
-                    else
-                    {
-                        Response.Write("Please Upload an .jpg, .jpeg, .gif or .png image");
-                    }
+                {                
+                        FileUpload2.SaveAs(Server.MapPath("~/Styles/large/" + fileName));
+                        filetitle1 = "~/Styles/large/" + fileName;
                 }
                 else
                 {
@@ -247,7 +211,7 @@ namespace OnlineFastFood.Admin
             }
             catch (Exception x)
             {
-                Response.Write(x);
+                Response.Write(x.Message);
             }
         }
     }

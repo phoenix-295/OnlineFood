@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using MySql.Data.MySqlClient;
 using System.Configuration;
-
+using MySql.Data.MySqlClient;
+using MySql.Data;
+using System.Drawing;
 
 namespace OnlineFastFood.Customer
 {
@@ -25,6 +26,7 @@ namespace OnlineFastFood.Customer
             {
                 var1 = false;
                 filldl();
+                CalTotal();
             }
         }
 
@@ -34,8 +36,8 @@ namespace OnlineFastFood.Customer
             constr = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
             MySqlConnection conn1 = new MySqlConnection(constr);
             conn1.Open();
-            MySqlCommand obj = new MySqlCommand("SELECT count (*) from ShopCart where UserName1='" + currentuser + "'", conn1);
-            cnt = (int)obj.ExecuteScalar();
+            MySqlCommand obj = new MySqlCommand("SELECT COUNT(*) FROM shop_cart where User_Name_1='" + currentuser + "'", conn1);
+            cnt = Convert.ToInt32(obj.ExecuteScalar());
             lblq.Text = cnt.ToString();
             conn1.Close();
         }
@@ -80,20 +82,56 @@ namespace OnlineFastFood.Customer
 
         protected void DataList1_UpdateCommand(object source, DataListCommandEventArgs e)
         {
+            chkItem(source,e);
+            
+            Label itemname1 = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("lbliname");
+            Label nowprice = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("lblwasp");
+            LinkButton add = (LinkButton)DataList1.Items[e.Item.ItemIndex].FindControl("LinkButton1");
+            BtnArgument = add.CommandArgument.ToString();
 
+            string con;
+            con = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
+            MySqlConnection conn1 = new MySqlConnection(con);
+            conn1.Open();
+            if (var1 == false)
+            {
+                MySqlCommand obj = new MySqlCommand("INSERT into shop_cart(Item_Code,Item_Name,Qty,Price,Tran_Date,Total,User_Name_1) values (@a,@b,@c,@d,@e,@f,@g)", conn1);
+                obj.Parameters.AddWithValue("@a", BtnArgument);
+                obj.Parameters.AddWithValue("@b", itemname1.Text);
+                obj.Parameters.AddWithValue("@c", 1);
+                obj.Parameters.AddWithValue("@d", nowprice.Text);
+                obj.Parameters.AddWithValue("@e", Convert.ToDateTime(DateTime.Now.ToShortDateString()));
+                obj.Parameters.AddWithValue("@f", nowprice.Text);
+                obj.Parameters.AddWithValue("@g", currentuser);
+                obj.ExecuteNonQuery();
+            }
+            else
+            {
+                MySqlCommand obj = new MySqlCommand("UPDATE shop_cart SET Qty=Qty+@Qty where Shop_Cart_ID=@a)", conn1);
+                //UPDATE food_details SET Item_Name=@a where Item_Code=@ic"
+
+                obj.Parameters.AddWithValue("@Qty", 1);
+
+                obj.Parameters.AddWithValue("@a", shocartid);
+                obj.ExecuteNonQuery();
+            }
+            conn1.Close();
+
+            CalTotal();
         }
 
-        protected void chkItem()
+        protected void chkItem(object source, DataListCommandEventArgs e)
         {
             Label itemname1 = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("Label1");
+
             Label nowprice = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("Label3");
             LinkButton add = (LinkButton)DataList1.Items[e.Item.ItemIndex].FindControl("LinkButton1");
             BtnArgument = add.CommandArgument.ToString();
 
             string s1, s2;
-            s1 = ConfigurationManager.ConnectionStrings["AccessDb"].ConnectionString;
+            s1 = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
 
-            s2 = "Select * from Shopcart";
+            s2 = "Select * from shop_cart";
 
             MySqlConnection conn = new MySqlConnection(s1);
             conn.Open();
@@ -103,10 +141,11 @@ namespace OnlineFastFood.Customer
 
             foreach (DataRow r1 in ds1.Tables["t1"].Rows)
             {
-                if ((r1["ItemCode1"].ToString() == BtnArgument) && (r1["UserName1"].ToString() == currentuser))
+                if ((r1["Item_Code"].ToString() == BtnArgument) && (r1["User_Name_1"].ToString() == currentuser))
                 {
-                    shocartid = r1["ShopCartId"].ToString();
+                    shocartid = r1["Shop_Cart_ID"].ToString();
                     var1 = true;
+                    break;
                 }
                 else
                 {
@@ -115,5 +154,7 @@ namespace OnlineFastFood.Customer
             }
             conn.Close();
         }
+
+
     }
 }

@@ -57,7 +57,7 @@
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# "../Customer/Food_Details_Large_UC_Display.aspx?Item_Code="+Eval("Item_Code") %>' Text='<%# Eval("Item_Name") %>'></asp:HyperLink>
                 </td>
                 <td class="auto-style3">
-                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Item_Code") %>'>Add To Cart</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Item_Code") %>' CommandName="Update">Add To Cart</asp:LinkButton>
                 </td>
             </tr>
         </table>
