@@ -101,6 +101,7 @@
     <Content Include="Customer\Food_Details_Large_UC.ascx" />
     <Content Include="Customer\Food_Details_Large_UC_Display.aspx" />
     <Content Include="Customer\Food_Details_Small_UC.ascx" />
+    <Content Include="Customer\Shop_Cart.aspx" />
     <Content Include="Cust_regestration.aspx" />
     <Content Include="Food_Details_Large_UC.ascx" />
     <Content Include="Food_Details_Large_UC_Display.aspx" />
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="Customer\Food_Details_Small_UC.ascx.designer.cs">
       <DependentUpon>Food_Details_Small_UC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Shop_Cart.aspx.cs">
+      <DependentUpon>Shop_Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Shop_Cart.aspx.designer.cs">
+      <DependentUpon>Shop_Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cust_regestration.aspx.cs">
       <DependentUpon>Cust_regestration.aspx</DependentUpon>

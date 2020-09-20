@@ -14,7 +14,7 @@
 <table class="auto-style1">
     <tr>
         <td>
-            <asp:HyperLink ID="HyperLink2" runat="server">Items :</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Customer/Shop_Cart.aspx">Items :</asp:HyperLink>
 &nbsp;<asp:Label ID="lblq" runat="server"></asp:Label>
         </td>
     </tr>

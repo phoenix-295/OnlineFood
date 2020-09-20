@@ -156,7 +156,7 @@ CREATE TABLE `shop_cart` (
   `Total` int DEFAULT NULL,
   `User_Name_1` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Shop_Cart_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +165,7 @@ CREATE TABLE `shop_cart` (
 
 LOCK TABLES `shop_cart` WRITE;
 /*!40000 ALTER TABLE `shop_cart` DISABLE KEYS */;
-INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',1,120,'2020-09-17 00:00:00',120,'Cust1'),(2,8,'Corn Pizza',1,80,'2020-09-17 00:00:00',80,'Cust1');
+INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',5,120,'2020-09-17 00:00:00',600,'Cust1'),(2,8,'Corn Pizza',2,80,'2020-09-17 00:00:00',160,'Cust1'),(7,31,'TestFood',1,12,'2020-09-20 00:00:00',12,'Cust1'),(8,7,'Tomato Soup',1,100,'2020-09-20 00:00:00',100,'Cust1'),(9,2,'Tripple Rice',1,89,'2020-09-20 00:00:00',89,'Cust1'),(10,4,'Rolls',1,80,'2020-09-20 00:00:00',80,'Cust1'),(11,9,'Club House Pizza',1,140,'2020-09-20 00:00:00',140,'Cust1');
 /*!40000 ALTER TABLE `shop_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -178,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-18 21:57:44
+-- Dump completed on 2020-09-20 19:53:45

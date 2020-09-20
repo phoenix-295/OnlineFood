@@ -19,89 +19,57 @@ namespace OnlineFastFood.Admin
         {
             if (!IsPostBack)
             {
-
                 FillGv();
-
             }
-
             lblup.Text = "";
         }
 
         protected void FillGv()
         {
             string strcon = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
-
             string s2 = "SELECT * FROM food_category";
-
             MySqlConnection conn = new MySqlConnection(strcon);
-
             conn.Open();
-
             MySqlDataAdapter da1 = new MySqlDataAdapter(s2, strcon);
-
             DataSet ds = new DataSet();
-
             da1.Fill(ds, "food_cat");
-
             GridView1.DataSource = ds.Tables["food_cat"].DefaultView;
-
             GridView1.DataBind();
-
             ViewState["vsFoodCategory"] = ds;
-
             conn.Close();
         }
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridView1.EditIndex = e.NewEditIndex;
-
             FillGv();
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridView1.EditIndex = -1;
-
             FillGv();
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string cid = GridView1.DataKeys[e.RowIndex].Values["Cat_ID"].ToString();
-
             TextBox incatname = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtnameedit");
-
             TextBox incatd = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtdescedit");
-
             string conn;
-
             conn = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString();
-
             MySqlConnection ocon = new MySqlConnection(conn);
-
             ocon.Open();
-
             MySqlCommand cmd = new MySqlCommand("UPDATE food_category SET Cat_Title=@ctit,Cat_Desc=@cdesc where Cat_ID=@cid", ocon);
-
             cmd.Parameters.AddWithValue("@ctit", incatname.Text);
-
             cmd.Parameters.AddWithValue("@cdesc", incatd.Text);
-
             cmd.Parameters.AddWithValue("@cid", cid);
-
             cmd.ExecuteNonQuery();
-
             ocon.Close();
-
             GridView1.EditIndex = -1;
-
             lblup.Text = "Updated Successfully";
-
             lblup.ForeColor = Color.White;
-
             lblup.BackColor = Color.Green;
-
             FillGv();
         }
 

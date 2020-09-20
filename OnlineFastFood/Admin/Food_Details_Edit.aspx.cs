@@ -36,11 +36,8 @@ namespace OnlineFastFood.Admin
                 cat_dropdown.DataSource = ds.Tables["food_cat"].DefaultView;
                 cat_dropdown.DataTextField = "Cat_Title";
                 cat_dropdown.DataValueField = "Cat_ID";
-
                 cat_dropdown.DataBind();
                 ViewState["vsFoodCategory"] = ds;
-                //int index1 = Convert.ToInt32(ic) - 1;
-                //cat_dropdown.SelectedIndex = index1;
                 conn.Close();
             }
             catch (Exception x)
@@ -60,8 +57,6 @@ namespace OnlineFastFood.Admin
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM  food_details", con);
                 DataSet ds1 = new DataSet();
                 da.Fill(ds1, "t1");
-
-
                 foreach (DataRow r1 in ds1.Tables["t1"].Rows)
                 {
                     if ((r1["Item_Code"].ToString() == itemcode))

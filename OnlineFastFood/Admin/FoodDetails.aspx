@@ -48,7 +48,7 @@
                     <tr>
                         <td style="width: 313px">
                               
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation()"/>
+                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg, image/jpg, image/png" onchange="Filevalidation()"/>
                         </td>
                         <td>
                             <strong>

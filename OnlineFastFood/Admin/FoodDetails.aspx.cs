@@ -111,6 +111,24 @@ namespace OnlineFastFood.Admin
             catch(Exception x)
             {
                 Response.Write(x);
+
+            }
+            clear();
+        }
+
+        protected void clear()
+        {
+            try
+            {
+                txtitemname.Text = "";
+                txtitemdetails.Text = "";
+                txtnow.Text = "";
+                txtwas.Text = "";
+                cat_dropdown.SelectedValue = "1";
+            }
+            catch (Exception x)
+            {
+                Response.Write(x);
             }
         }
 
