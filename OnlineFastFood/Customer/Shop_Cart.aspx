@@ -7,7 +7,7 @@
                     <Columns>
                         <asp:TemplateField HeaderText="Item Name">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtiname" runat="server" Text='<%# Eval("Item_Name") %>'></asp:TextBox>
+                                <asp:Label ID="lblItem_Name" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblname" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
@@ -23,7 +23,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Price">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtprice" runat="server" Text='<%# Eval("Price") %>'></asp:TextBox>
+                                <asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lblprice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
@@ -31,7 +31,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Total">
                             <EditItemTemplate>
-                                <asp:TextBox ID="txttot" runat="server" Text='<%# Eval("Total") %>'></asp:TextBox>
+                                <asp:Label ID="lblTotal" runat="server" Text='<%# Eval("Total") %>'></asp:Label>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="lbltot" runat="server" Text='<%# Eval("Total") %>'></asp:Label>

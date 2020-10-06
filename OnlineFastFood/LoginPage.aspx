@@ -28,6 +28,11 @@
         }
         .auto-style2 {
             color: #000000;
+            font-size: medium;
+        }
+        .HeaderBarThreshold:hover
+        {
+            color: blue;      
         }
     </style>
 
@@ -54,9 +59,9 @@
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="HomePage1.aspx">Home</a></li>
-								<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Customer/Cust_Home.aspx">Customer</a></li>
-                                <li role="presentation"><a class="active"></a><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>
+								<%--<li role="presentation"><a href="Admin/AdminHome.aspx">Admin</a></li>
+								<li role="presentation"><a href="Customer/Cust_Home.aspx">Customer</a></li>--%>
+                                <li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
 								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
 							</ul>
 						</div>
@@ -108,13 +113,13 @@
            
 
             <table class="nav-justified">
-                <tr>
+                <tr style="vertical-align:top">
                     <td class="auto-style1">
                         <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black">
                         </asp:Login>
                         </td>
                     <td>
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style2" NavigateUrl="~/Cust_regestration.aspx">Not a member? Click here to register</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="HeaderBarThreshold" NavigateUrl="~/Cust_regestration.aspx">Not a member? Click here to register</asp:HyperLink>
                     </td>
                 </tr>
             </table>
