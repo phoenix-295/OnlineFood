@@ -94,5 +94,10 @@ namespace OnlineFastFood.Customer
             conn.Close();
             Session["abc"] = cnt.ToString();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Customer/Check_Out.aspx");
+        }
     }
 }

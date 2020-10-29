@@ -97,6 +97,7 @@
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Category_UC.ascx" />
     <Content Include="Customer\Category_UC.ascx" />
+    <Content Include="Customer\Check_Out.aspx" />
     <Content Include="Customer\Cust_Home.aspx" />
     <Content Include="Customer\Food_Details_Large_UC.ascx" />
     <Content Include="Customer\Food_Details_Large_UC_Display.aspx" />
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="Customer\Category_UC.ascx.designer.cs">
       <DependentUpon>Category_UC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Check_Out.aspx.cs">
+      <DependentUpon>Check_Out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Check_Out.aspx.designer.cs">
+      <DependentUpon>Check_Out.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer\CustomerMaster.Master.cs">
       <DependentUpon>CustomerMaster.Master</DependentUpon>

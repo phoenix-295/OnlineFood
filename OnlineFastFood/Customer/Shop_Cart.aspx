@@ -57,8 +57,17 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="color: #000000; font-size: large">Total is :
+            <td style="color: #000000; font-size: large">
+                <table class="nav-justified">
+                    <tr>
+                        <td class="modal-lg" style="width: 391px">Total is :
                 <asp:Label ID="lbltot" runat="server"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Proceed to Checkout" />
+                        </td>
+                    </tr>
+                </table>
             </td>
             <td>&nbsp;</td>
         </tr>
