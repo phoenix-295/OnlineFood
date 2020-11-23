@@ -135,8 +135,104 @@ CREATE TABLE `food_details` (
 
 LOCK TABLES `food_details` WRITE;
 /*!40000 ALTER TABLE `food_details` DISABLE KEYS */;
-INSERT INTO `food_details` VALUES (1,'Pepperoni Pizza',1,'Veg Pepperoni Pizza with toppings','~/Styles/small/1tgbtrgr.jpg','~/Styles/small/1tgbtrgr.jpg',120,2000,NULL),(2,'Tripple Rice',6,'Veg Tripple rice','~/Styles/small/chrome_w2YxVXZhXB.jpg','~/Styles/small/chrome_w2YxVXZhXB.jpg',89,50,NULL),(3,'Soup',1,'Veg Soup','~/Styles/small/chrome_9X4pRrrX7I.jpg','~/Styles/large/chrome_n03LQ3BMNK.jpg',70,60,NULL),(4,'Rolls',5,'Cheese Rolls','~/Styles/small/chrome_La0953cWEu.jpg','~/Styles/large/chrome_n03LQ3BMNK.jpg',80,90,NULL),(6,'Hakka Noodels',3,'Noodels','~/Styles/small/ferferf.jpg','',80,100,'Admin'),(7,'Tomato Soup',7,'Soup','119547073_770497607122555_3377064877914460649_n.jpg','',100,70,'Admin'),(8,'Corn Pizza',1,'Veg Pizza','~/Styles/small/italian chicken  pizza2.jpg','~/Styles/large/italian chicken  pizza2.jpg',80,70,'Admin'),(9,'Club House Pizza',1,'Non Veg Pizza','~/Styles/small/maxresdefault.jpg','~/Styles/large/maxresdefault.jpg',140,120,'Admin'),(10,'Mexican Pizza',1,'Veg Pizza','~/Styles/small/download.jpeg','~/Styles/large/download.jpeg',120,120,'Admin'),(11,'Chicken Overload',1,'Non Veg Pizza','~/Styles/small/veg-pizza.jpeg','~/Styles/large/veg-pizza.jpeg',150,160,'Admin'),(12,'Hong Kong Noodels',3,'Veg Noodels','~/Styles/small/Soy-Sauce-Noodles_2.jpg','~/Styles/large/Soy-Sauce-Noodles_2.jpg',100,90,'Admin'),(13,'Korean Noodles',3,'Veg Noodels','~/Styles/small/OB7S7ZQJAVDRFGVXYHMD3FUS2Y.jpg','~/Styles/small/OB7S7ZQJAVDRFGVXYHMD3FUS2Y.jpg',130,110,'Admin'),(14,'Sliced Noodles',3,'Non Veg Noodles ','~/Styles/small/stir-fried-eggs-tomato.jpg','~/Styles/large/stir-fried-eggs-tomato.jpg',120,100,'Admin'),(15,'Cheese Burger',4,'burger with Cheese on topping','~/Styles/small/omlet  sandwich2.jpg','~/Styles/large/omlet  sandwich2.jpg',90,100,'Admin'),(16,'Chicken Burger',4,'Chicken Toppings','~/Styles/small/ymchbrgr.jpg','~/Styles/large/ymchbrgr.jpg',140,130,'Admin'),(31,'TestFood',1,'Cheese Rolls','~/Styles/small/802f27122b542fdbe523fc9a15fc20bf.jpg','~/Styles/large/119547073_770497607122555_3377064877914460649_n.jpg',12,100,'Admin');
+INSERT INTO `food_details` VALUES (1,'Pepperoni Pizza',1,'Veg Pepperoni Pizza with toppings','~/Styles/small/1tgbtrgr.jpg','~/Styles/small/1tgbtrgr.jpg',120,2000,NULL),(2,'Tripple Rice',6,'Veg Tripple rice','~/Styles/small/chrome_w2YxVXZhXB.jpg','~/Styles/small/chrome_w2YxVXZhXB.jpg',89,50,NULL),(3,'Soup',1,'Veg Soup','~/Styles/small/chrome_9X4pRrrX7I.jpg','~/Styles/large/chrome_n03LQ3BMNK.jpg',70,60,NULL),(4,'Rolls',5,'Cheese Rolls','~/Styles/small/chrome_La0953cWEu.jpg','~/Styles/large/chrome_n03LQ3BMNK.jpg',80,90,NULL),(6,'Hakka Noodels',3,'Noodels','~/Styles/small/ferferf.jpg','',80,100,'Admin'),(7,'Tomato Soup',7,'Soup','119547073_770497607122555_3377064877914460649_n.jpg','',100,70,'Admin'),(8,'Corn Pizza',1,'Veg Pizza','~/Styles/small/italian chicken  pizza2.jpg','~/Styles/large/italian chicken  pizza2.jpg',80,70,'Admin'),(9,'Club House Pizza',1,'Non Veg Pizza','~/Styles/small/maxresdefault.jpg','~/Styles/large/maxresdefault.jpg',140,120,'Admin'),(10,'Mexican Pizza',1,'Veg Pizza','~/Styles/small/download.jpeg','~/Styles/large/download.jpeg',120,120,'Admin'),(11,'Chicken Overload',1,'Non Veg Pizza','~/Styles/small/veg-pizza.jpeg','~/Styles/large/veg-pizza.jpeg',150,160,'Admin'),(12,'Hong Kong Noodels',3,'Veg Noodels','~/Styles/small/Soy-Sauce-Noodles_2.jpg','~/Styles/large/Soy-Sauce-Noodles_2.jpg',100,90,'Admin'),(13,'Korean Noodles',3,'Veg Noodels','~/Styles/small/OB7S7ZQJAVDRFGVXYHMD3FUS2Y.jpg','~/Styles/small/OB7S7ZQJAVDRFGVXYHMD3FUS2Y.jpg',130,110,'Admin'),(14,'Sliced Noodles',3,'Non Veg Noodles ','~/Styles/small/stir-fried-eggs-tomato.jpg','~/Styles/large/stir-fried-eggs-tomato.jpg',120,100,'Admin'),(15,'Cheese Burger',4,'burger with Cheese on topping','~/Styles/small/omlet  sandwich2.jpg','~/Styles/large/omlet  sandwich2.jpg',90,100,'Admin'),(16,'Chicken Burger',4,'Chicken Toppings','~/Styles/small/ymchbrgr.jpg','~/Styles/large/ymchbrgr.jpg',140,130,'Admin'),(31,'TestFood',1,'Cheese Rolls','~/Styles/small/hello world.txt','~/Styles/large/119547073_770497607122555_3377064877914460649_n.jpg',12,100,'Admin');
 /*!40000 ALTER TABLE `food_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `new_table`
+--
+
+DROP TABLE IF EXISTS `new_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `new_table` (
+  `Order_Detail_Id` int NOT NULL AUTO_INCREMENT,
+  `Order_Id` int DEFAULT NULL,
+  `Item_Code` int DEFAULT NULL,
+  `Item_Name` varchar(45) DEFAULT NULL,
+  `Qty` int DEFAULT NULL,
+  `Price` int DEFAULT NULL,
+  `Total` int DEFAULT NULL,
+  `User_Name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Order_Detail_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `new_table`
+--
+
+LOCK TABLES `new_table` WRITE;
+/*!40000 ALTER TABLE `new_table` DISABLE KEYS */;
+/*!40000 ALTER TABLE `new_table` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order1`
+--
+
+DROP TABLE IF EXISTS `order1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order1` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `Date_Created` datetime DEFAULT NULL,
+  `Date_Shipped` datetime DEFAULT NULL,
+  `Verified` tinyint DEFAULT NULL,
+  `Dilivery_Status` tinyint DEFAULT NULL,
+  `Payment_Dilevery_Status` tinyint DEFAULT NULL,
+  `Completed` tinyint DEFAULT NULL,
+  `Cancled` tinyint DEFAULT NULL,
+  `Comment` varchar(100) DEFAULT NULL,
+  `Coustmer_Name` varchar(250) DEFAULT NULL,
+  `Coustmer_Email` varchar(100) DEFAULT NULL,
+  `Shipping_Adress` varchar(250) DEFAULT NULL,
+  `Pin` int DEFAULT NULL,
+  `User_Name` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order1`
+--
+
+LOCK TABLES `order1` WRITE;
+/*!40000 ALTER TABLE `order1` DISABLE KEYS */;
+INSERT INTO `order1` VALUES (1,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','tttt',415612,'nik1'),(2,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','fdfdf',415612,'nik1'),(3,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ewew',415612,'nik1'),(4,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ffdsd',415612,'nik1');
+/*!40000 ALTER TABLE `order1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `order_details`
+--
+
+DROP TABLE IF EXISTS `order_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `order_details` (
+  `Order_Detail_Id` int NOT NULL AUTO_INCREMENT,
+  `Order_Id` int DEFAULT NULL,
+  `Item_Code` int DEFAULT NULL,
+  `Item_Name` varchar(45) DEFAULT NULL,
+  `Qty` int DEFAULT NULL,
+  `Price` int DEFAULT NULL,
+  `Total` int DEFAULT NULL,
+  `User_Name` varchar(45) DEFAULT NULL,
+  `Owner` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Order_Detail_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `order_details`
+--
+
+LOCK TABLES `order_details` WRITE;
+/*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
+INSERT INTO `order_details` VALUES (9,4,9,'Club House Pizza',1,140,140,'nik1',''),(10,4,11,'Chicken Overload',1,150,150,'nik1',''),(11,4,4,'Rolls',1,80,80,'nik1',''),(12,4,8,'Corn Pizza',1,80,80,'nik1','Admin');
+/*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -155,8 +251,9 @@ CREATE TABLE `shop_cart` (
   `Tran_Date` datetime DEFAULT NULL,
   `Total` int DEFAULT NULL,
   `User_Name_1` varchar(50) DEFAULT NULL,
+  `Owner` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Shop_Cart_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,7 +262,7 @@ CREATE TABLE `shop_cart` (
 
 LOCK TABLES `shop_cart` WRITE;
 /*!40000 ALTER TABLE `shop_cart` DISABLE KEYS */;
-INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',5,120,'2020-09-17 00:00:00',600,'Cust1'),(2,8,'Corn Pizza',2,80,'2020-09-17 00:00:00',160,'Cust1'),(7,31,'TestFood',1,12,'2020-09-20 00:00:00',12,'Cust1'),(8,7,'Tomato Soup',1,100,'2020-09-20 00:00:00',100,'Cust1'),(9,2,'Tripple Rice',1,89,'2020-09-20 00:00:00',89,'Cust1'),(10,4,'Rolls',1,80,'2020-09-20 00:00:00',80,'Cust1'),(11,9,'Club House Pizza',1,140,'2020-09-20 00:00:00',140,'Cust1');
+INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',8,120,'2020-09-17 00:00:00',960,'Cust1',NULL),(2,8,'Corn Pizza',2,80,'2020-09-17 00:00:00',160,'Cust1',NULL),(7,31,'TestFood',1,12,'2020-09-20 00:00:00',12,'Cust1',NULL),(8,7,'Tomato Soup',1,100,'2020-09-20 00:00:00',100,'Cust1',NULL),(9,2,'Tripple Rice',2,89,'2020-09-20 00:00:00',178,'Cust1',NULL),(10,4,'Rolls',1,80,'2020-09-20 00:00:00',80,'Cust1',NULL),(11,9,'Club House Pizza',1,140,'2020-09-20 00:00:00',140,'Cust1',NULL),(12,13,'Korean Noodles',1,130,'2020-09-27 00:00:00',130,'Cust1',NULL),(15,1,'Pepperoni Pizza',7,120,'2020-11-23 00:00:00',840,'Admin',NULL),(16,9,'Club House Pizza',1,140,'2020-11-23 00:00:00',140,'Admin',NULL),(17,11,'Chicken Overload',1,150,'2020-11-23 00:00:00',150,'Admin',NULL);
 /*!40000 ALTER TABLE `shop_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -178,4 +275,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-20 19:53:45
+-- Dump completed on 2020-11-23 21:52:11
