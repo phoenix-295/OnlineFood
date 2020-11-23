@@ -13,6 +13,15 @@ namespace OnlineFastFood.Customer {
     public partial class Cust_Home {
         
         /// <summary>
+        /// pnlHelloWorld1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel pnlHelloWorld1;
+        
+        /// <summary>
         /// Food_Details_Small_UC1 control.
         /// </summary>
         /// <remarks>

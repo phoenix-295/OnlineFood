@@ -93,7 +93,7 @@
     </tr>
     <tr>
         <td class="style22" style="height: 36px">
-            <asp:Button ID="btns" runat="server" ForeColor="Black" style="font-family: 'Comic Sans MS'; font-size: 11pt;" Text="Submit" />
+            <asp:Button ID="btns" runat="server" ForeColor="Black" style="font-family: 'Comic Sans MS'; font-size: 11pt;" Text="Submit" OnClick="btns_Click" />
         </td>
         <td class="style16" colspan="2" style="color: #000000; font-size: 11pt; height: 36px"></td>
     </tr>

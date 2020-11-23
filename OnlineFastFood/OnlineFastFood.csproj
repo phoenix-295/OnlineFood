@@ -112,6 +112,7 @@
     <Content Include="LoginPage.aspx" />
     <Content Include="SuperAdmin\Admin_Regestration.aspx" />
     <Content Include="SuperAdmin\Food_Category.aspx" />
+    <Content Include="SuperAdmin\Manage_Users.aspx" />
     <Content Include="SuperAdmin\SAdminHome.aspx" />
     <Content Include="SuperAdmin\Test.aspx" />
     <Content Include="test.aspx" />
@@ -281,6 +282,13 @@
     </Compile>
     <Compile Include="SuperAdmin\Food_Category.aspx.designer.cs">
       <DependentUpon>Food_Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin\Manage_Users.aspx.cs">
+      <DependentUpon>Manage_Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin\Manage_Users.aspx.designer.cs">
+      <DependentUpon>Manage_Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="SuperAdmin\SAdminHome.aspx.cs">
       <DependentUpon>SAdminHome.aspx</DependentUpon>

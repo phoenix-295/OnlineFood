@@ -50,7 +50,9 @@
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lbl_owner" runat="server" Text='<%# Eval("user1") %>' Visible="False"></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style3">

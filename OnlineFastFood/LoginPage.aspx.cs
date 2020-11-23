@@ -13,13 +13,14 @@ namespace OnlineFastFood
         string role1, currentuser1;
         protected void Page_Load(object sender, EventArgs e)
         {
+            currentuser1 = User.Identity.Name.ToString();
             getcust();
         }
 
         protected void getcust()
         {
             bool x;
-            currentuser1 = User.Identity.Name.ToString();
+            
             x = Roles.IsUserInRole("Customer");
             if (x == true)
             {

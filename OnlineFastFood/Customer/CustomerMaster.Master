@@ -105,9 +105,15 @@
 		</div>
 	</div>
 	
+<asp:ScriptManager ID="MainScriptManager" runat="server" />
+        <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
+            <ContentTemplate>
 	<section id="about">
         <div class="container", style="vertical-align:top">
-            <table class="nav-justified">
+
+            
+
+                <table class="nav-justified">
                 <tr style="vertical-align:top">
                     <td class="auto-style1">
                         <uc1:Category_UC ID="Category_UC1" runat="server" />
@@ -121,12 +127,20 @@
                     </td>
                 </tr>
             </table>
+
+
+
+
+
+            
            
 
         </div><!--/.container-->
     </section><!--/#about-->
 	
 	
+	</ContentTemplate>
+</asp:UpdatePanel>
 	
 	
 			

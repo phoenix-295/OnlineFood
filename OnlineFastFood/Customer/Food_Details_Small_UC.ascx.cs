@@ -83,6 +83,7 @@ namespace OnlineFastFood.Customer
             Label itemname1 = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("lbliname");
             Label nowprice = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("lblwasp");
             LinkButton add = (LinkButton)DataList1.Items[e.Item.ItemIndex].FindControl("LinkButton1");
+            Label owner_1 = (Label)DataList1.Items[e.Item.ItemIndex].FindControl("lbl_owner");
             BtnArgument = add.CommandArgument.ToString();
 
             string con;
@@ -91,7 +92,7 @@ namespace OnlineFastFood.Customer
             conn1.Open();
             if (var1 == false)
             {
-                MySqlCommand obj = new MySqlCommand("INSERT into shop_cart(Item_Code,Item_Name,Qty,Price,Tran_Date,Total,User_Name_1) values (@a,@b,@c,@d,@e,@f,@g)", conn1);
+                MySqlCommand obj = new MySqlCommand("INSERT into shop_cart(Item_Code,Item_Name,Qty,Price,Tran_Date,Total,User_Name_1,Owner) values (@a,@b,@c,@d,@e,@f,@g,@h)", conn1);
                 obj.Parameters.AddWithValue("@a", BtnArgument);
                 obj.Parameters.AddWithValue("@b", itemname1.Text);
                 obj.Parameters.AddWithValue("@c", 1);
@@ -99,6 +100,7 @@ namespace OnlineFastFood.Customer
                 obj.Parameters.AddWithValue("@e", Convert.ToDateTime(DateTime.Now.ToShortDateString()));
                 obj.Parameters.AddWithValue("@f", nowprice.Text);
                 obj.Parameters.AddWithValue("@g", currentuser);
+                obj.Parameters.AddWithValue("@h", owner_1.Text);
                 obj.ExecuteNonQuery();
             }
             else

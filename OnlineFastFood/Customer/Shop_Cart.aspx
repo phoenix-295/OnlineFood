@@ -1,9 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Customer/CustomerMaster.Master" AutoEventWireup="true" CodeBehind="Shop_Cart.aspx.cs" Inherits="OnlineFastFood.Customer.Shop_Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table class="nav-justified">
+
+        <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
+            <ContentTemplate>
+
+
+                <table class="nav-justified">
         <tr>
             <td>
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False" DataKeyNames="Shop_Cart_ID" PageSize="5" style="color: #000000; font-size: 11pt" Width="708px" ForeColor="#C6A674" OnRowCancelingEdit="gv1_RowCancelingEdit" OnRowEditing="gv1_RowEditing" OnRowUpdating="gv1_RowUpdating" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="gv1_PageIndexChanging">
+                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False" DataKeyNames="Shop_Cart_ID" PageSize="5" style="color: #000000; font-size: 11pt" Width="708px" ForeColor="#C6A674" OnRowCancelingEdit="gv1_RowCancelingEdit" OnRowEditing="gv1_RowEditing" OnRowUpdating="gv1_RowUpdating" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="gv1_PageIndexChanging" OnRowDeleting="gv1_RowDeleting">
                     <Columns>
                         <asp:TemplateField HeaderText="Item Name">
                             <EditItemTemplate>
@@ -72,4 +77,11 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+
+	</ContentTemplate>
+</asp:UpdatePanel>
+
+
+
+    
 </asp:Content>

@@ -99,5 +99,32 @@ namespace OnlineFastFood.Customer
         {
             Response.Redirect("~/Customer/Check_Out.aspx");
         }
+
+        protected void gv1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string abc = gv1.DataKeys[e.RowIndex].Values["Shop_Cart_ID"].ToString();
+
+            TextBox inqty = (TextBox)gv1.Rows[e.RowIndex].FindControl("TextBox1");
+
+            string conn;
+            conn = ConfigurationManager.ConnectionStrings["FoodDatabase"].ToString();
+            MySqlConnection ocon = new MySqlConnection(conn);
+
+            ocon.Open();
+
+            MySqlCommand cmd = new MySqlCommand("Delete from shop_cart where Shop_Cart_ID=" + abc, ocon);
+            int res = cmd.ExecuteNonQuery();
+
+            gv1.EditIndex = -1;
+
+            cmd.ExecuteNonQuery();
+
+            ocon.Close();
+            if (res == 1)
+            {
+                fillgv();
+            }
+            updategv();
+        }
     }
 }
