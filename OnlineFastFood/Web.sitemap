@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="HomePage1.aspx" title="Home"  description="HomePage">
+    <siteMapNode url="~/Admin/AdminHome.aspx" title="Admin Home"  description="Ahome">
+      <siteMapNode url="~/Admin/FoodCategory.aspx" title="Food Category" description="Category"/>
+      <siteMapNode url="~/Admin/FoodDetails.aspx" title="Food Details" description="FoodDetails"/>
+      <siteMapNode url="~/Admin/Manage_Orders.aspx" title="Manage Orders" description="manageorders"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Customer/CustHome.aspx" title="Customer Home" description="Custhome">
+      <siteMapNode url="~/Customer/Shop_Cart.aspx" title="Shop Cart" description="Shop Cart"/>
+    </siteMapNode>
+
+    <siteMapNode url="LoginPage.aspx" title="Login Page" description="Login">
+      <siteMapNode url="Cust_regestration.aspx" title="New Customer registration" description="Createuser"/>
+    </siteMapNode>
+
+    <siteMapNode url="About_Us.aspx" title="About Us" description="Abo"/>
+  </siteMapNode>
+</siteMap>
