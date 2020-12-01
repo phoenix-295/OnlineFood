@@ -126,13 +126,11 @@
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Admin/FoodDetails.aspx" Text="Food Details" Value="Food Details"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
-                    <asp:MenuItem Text="Manage Orders" Value="Manage Orders"></asp:MenuItem>
+                    <asp:MenuItem Text="Manage Orders" Value="Manage Orders" NavigateUrl="~/Admin/Manage_Orders.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
-                    <asp:MenuItem Text="Manage Users" Value="Manage Users"></asp:MenuItem>
+                    <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="~/About_Us.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
-                    <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
-                    <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
-                    <asp:MenuItem Text="SiteMap" Value="SiteMap"></asp:MenuItem>
+                    <asp:MenuItem Text="SiteMap" Value="SiteMap" NavigateUrl="~/SiteMap1.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
                     <asp:MenuItem Text="Reports" Value="Reports"></asp:MenuItem>
                 </Items>

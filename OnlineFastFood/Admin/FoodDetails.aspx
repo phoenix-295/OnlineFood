@@ -167,7 +167,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <HeaderStyle BackColor="#C6A674" />
+                    <HeaderStyle BackColor="#C6A674" ForeColor="#FFFFCC" />
                     <PagerStyle BackColor="#C6A674" ForeColor="Black" />
                 </asp:GridView>
             </td>
