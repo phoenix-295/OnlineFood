@@ -16,13 +16,9 @@
     </tr>
     <tr>
         <td class="style8" style="width: 387px">
-            <asp:ListBox ID="ListBox4" runat="server" ForeColor="Black" Height="260px" Width="260px"></asp:ListBox>
-        </td>
+            &nbsp;</td>
         <td class="style11" style="width: 824px">
-            <asp:Button ID="Button1" runat="server" onclick="btngu_Click" 
-                style="font-size: medium; font-family: 'Comic Sans MS'; color: #800000" 
-                Text="Get User" />
-        </td>
+            &nbsp;</td>
     </tr>
     <tr>
         <td class="style8" style="width: 387px">

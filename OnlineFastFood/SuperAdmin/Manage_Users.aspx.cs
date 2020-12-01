@@ -22,12 +22,6 @@ namespace OnlineFastFood.SuperAdmin
             }
         }
 
-        protected void btngu_Click(object sender, EventArgs e)
-        {
-            ListBox4.DataSource = Membership.GetAllUsers();
-            ListBox4.DataBind();
-        }
-
         protected void databind3()
         {
             string text = ListBox5.SelectedItem.ToString();

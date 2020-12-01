@@ -113,6 +113,7 @@
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/SuperAdmin/Admin_Regestration.aspx" Text="Register Admin" Value="Food Details"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/SuperAdmin/Manage_Users.aspx" Text="Manage Users" Value="Manage Users"></asp:MenuItem>
                 </Items>
             </asp:Menu>
 

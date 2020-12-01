@@ -48,7 +48,7 @@
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                         ControlToValidate="txtcontact" ErrorMessage="Mobile Number cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
-                                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtcontact" ErrorMessage="Please Enter a valid mobile number." MaximumValue="9999999999" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
+                                    <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtcontact" ErrorMessage="Please Enter a valid mobile number." MaximumValue="9999999999" MinimumValue="0" style="color: #FF0000" Type="Double">*</asp:RangeValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtcontact" ErrorMessage="Mobile Number must be 10 Digit" style="color: #FF0000" ValidationExpression="[0-9]{10}">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
@@ -100,7 +100,7 @@
                                     <asp:TextBox ID="txtpin" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                                         ControlToValidate="txtpin" ErrorMessage="Pin Cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Pin must be 6 digit." style="color: #FF0000" ValidationExpression="[0-9]{6}">*</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="Pin must be 6 digit." style="color: #FF0000" ValidationExpression="[0-9]{6}" ControlToValidate="txtpin">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                         </table>
