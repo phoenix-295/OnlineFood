@@ -26,10 +26,6 @@
         .auto-style1 {
             width: 192px;
         }
-        .auto-style2 {
-            color: #000000;
-            font-size: medium;
-        }
         .HeaderBarThreshold:hover
         {
             color: blue;      
@@ -119,7 +115,7 @@
                         </asp:Login>
                         </td>
                     <td>
-                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="HeaderBarThreshold" NavigateUrl="~/Cust_regestration.aspx">Not a member? Click here to register</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="HeaderBarThreshold" NavigateUrl="~/Cust_regestration.aspx" style="font-size: medium">Not a member? Click here to register</asp:HyperLink>
                     </td>
                 </tr>
             </table>

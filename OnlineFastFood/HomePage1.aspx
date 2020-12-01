@@ -4,6 +4,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="vertical-align:text-top; width: 921px;";>
+        <asp:ScriptManager ID="MainScriptManager" runat="server" />
+        <asp:UpdatePanel ID="panel1" runat="server">
+            <ContentTemplate>
         <table  class="nav-justified">
         <tr style="vertical-align:top">
             <td>
@@ -22,5 +25,7 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
     </div>
 </asp:Content>
