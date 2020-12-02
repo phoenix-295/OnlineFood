@@ -1,16 +1,14 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerMaster.master.cs" Inherits="OnlineFastFood.Customer.CustomerMaster" %>
-
-<%@ Register src="Category_UC.ascx" tagname="Category_UC" tagprefix="uc1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Change_Password.aspx.cs" Inherits="OnlineFastFood.Customer.Change_Password" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Online Food</title>
+    <title>Login</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -26,17 +24,20 @@
     <![endif]-->
     <style type="text/css">
         .auto-style1 {
-            width: 133px;
-            color : black;
+            width: 192px;
         }
-        .style1
+        .HeaderBarThreshold:hover
         {
-            width: 100%;
+            color: blue;      
+        }
+        .auto-style2 {
+            color: #000000;
         }
     </style>
+
 </head>
 <body>
-	<form id="form1" runat="server">
+    <form id="form1" runat="server">
 	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
@@ -56,11 +57,10 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="../HomePage1.aspx">Home</a></li>
-                                <li role="presentation"><a href="Change_Password.aspx">Change Password</a></li>
-								<%--<li role="presentation"><a href="../Admin/AdminHome.aspx">Admin</a></li>
-								<li role="presentation"><a href="Cust_Home.aspx" class="active">Customer</a></li>	--%>															
-								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>					
+								<li role="presentation"><a href="Cust_Home.aspx">Home</a></li>
+								<li role="presentation"><a href="Change_Password.aspx">Change Password</a></li>
+                                <li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
+								<%--<li role="presentation"><a href="LoginPage.aspx">Contact</a></li>--%>						
 							</ul>
 						</div>
 					</div>						
@@ -86,10 +86,10 @@
 								<img src="img/3.jpg" class="img-responsive" alt=""> 
 						   </div>
 						   <div class="item">
-								<img src="img/about-us.jpg" class="img-responsive" alt=""> 
+								<img src="img/3.jpg" class="img-responsive" alt=""> 
 						   </div> 
 						   <div class="item">
-								<img src="img/4.jpg" class="img-responsive" alt=""> 
+								<img src="img/3.jpg" class="img-responsive" alt=""> 
 						   </div> 
 						</div>
 						
@@ -106,42 +106,32 @@
 		</div>
 	</div>
 	
-<asp:ScriptManager ID="MainScriptManager" runat="server" />
-        <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
-            <ContentTemplate>
 	<section id="about">
-        <div class="container", style="vertical-align:top">
+        <div class="container">
+           <asp:ScriptManager ID="MainScriptManager" runat="server" />
+        <asp:UpdatePanel ID="panel1" runat="server">
+            <ContentTemplate>
 
-            
 
-                <table class="nav-justified">
+            <table class="nav-justified">
                 <tr style="vertical-align:top">
                     <td class="auto-style1">
-                        <uc1:Category_UC ID="Category_UC1" runat="server" />
-                    </td>
-                    <td class="style1">
-                        
-                        
-                        
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
-                        </asp:ContentPlaceHolder>
+                        <asp:ChangePassword ID="ChangePassword1" runat="server" BackColor="#DAB273" CssClass="auto-style2" Font-Size="12pt" Width="543px">
+                        </asp:ChangePassword>
+                        </td>
+                    <td>
+                        <br />
                     </td>
                 </tr>
             </table>
-
-
-
-
-
-            
+                </ContentTemplate>
+</asp:UpdatePanel>
            
 
         </div><!--/.container-->
     </section><!--/#about-->
 	
 	
-	</ContentTemplate>
-</asp:UpdatePanel>
 	
 	
 			
@@ -197,7 +187,7 @@
 						<li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 						<li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="SuperAdmin/SAdminHome.aspx" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
 					</ul>	
 				</div>
@@ -226,5 +216,5 @@
 	<script src="js/jquery.isotope.min.js"></script> 
 	<script src="js/functions.js"></script>
     </form>
-  </body>
+</body>
 </html>
