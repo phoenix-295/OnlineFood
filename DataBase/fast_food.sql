@@ -45,7 +45,6 @@ CREATE TABLE `admin_registration` (
 
 LOCK TABLES `admin_registration` WRITE;
 /*!40000 ALTER TABLE `admin_registration` DISABLE KEYS */;
-INSERT INTO `admin_registration` VALUES (1,'Nikhil','Mangesh','Shirdhankar',9096546781,'Ratnagiri','Ratnagiri','Ratnagiri','nikhil295@gmail.com',415612,'x',NULL);
 /*!40000 ALTER TABLE `admin_registration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +69,7 @@ CREATE TABLE `cust_registration` (
   `user_name` varchar(100) DEFAULT NULL,
   `pass` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`crid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +78,7 @@ CREATE TABLE `cust_registration` (
 
 LOCK TABLES `cust_registration` WRITE;
 /*!40000 ALTER TABLE `cust_registration` DISABLE KEYS */;
-INSERT INTO `cust_registration` VALUES (1,'Nikhil','Mangesh','Shirdhankar',9096546781,'Ratnagiri','Ratnagiri','Ratnagiri','nikhil295@gmail.com',415612,'nik1','123'),(2,'Nikhil','Mangesh','Shirdhankar',9096546781,'\'557 k\', Gulmoar, Anand Nagar, S.V.Road, Maruti Mandir, Ratnagiri','Ratnagiri','Ratnagiri','nikhil295@gmail.com',415612,'nik12','123');
+INSERT INTO `cust_registration` VALUES (3,'Nikhil','Mangesh','Shirdhankar',9096546781,'Ratnagiri','Ratnagiri','Ratnagiri','nikhil295@gmail.com',415612,'nik1','nikhil!'),(4,'Nikhil','Mangesh','Shirdhankar',9096546781,'Ratnagiri','Ratnagiri','Ratnagiri','nikhil295@gmail.com',415612,'nik12','nikhil!');
 /*!40000 ALTER TABLE `cust_registration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,11 +178,11 @@ CREATE TABLE `order1` (
   `order_id` int NOT NULL AUTO_INCREMENT,
   `Date_Created` datetime DEFAULT NULL,
   `Date_Shipped` datetime DEFAULT NULL,
-  `Verified` tinyint DEFAULT NULL,
-  `Dilivery_Status` tinyint DEFAULT NULL,
-  `Payment_Dilevery_Status` tinyint DEFAULT NULL,
-  `Completed` tinyint DEFAULT NULL,
-  `Cancled` tinyint DEFAULT NULL,
+  `Verified` tinyint DEFAULT '0',
+  `Dilivery_Status` tinyint DEFAULT '0',
+  `Payment_Dilevery_Status` tinyint DEFAULT '0',
+  `Completed` tinyint DEFAULT '0',
+  `Cancled` tinyint DEFAULT '0',
   `Comment` varchar(100) DEFAULT NULL,
   `Coustmer_Name` varchar(250) DEFAULT NULL,
   `Coustmer_Email` varchar(100) DEFAULT NULL,
@@ -191,7 +190,7 @@ CREATE TABLE `order1` (
   `Pin` int DEFAULT NULL,
   `User_Name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +199,7 @@ CREATE TABLE `order1` (
 
 LOCK TABLES `order1` WRITE;
 /*!40000 ALTER TABLE `order1` DISABLE KEYS */;
-INSERT INTO `order1` VALUES (1,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','tttt',415612,'nik1'),(2,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','fdfdf',415612,'nik1'),(3,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ewew',415612,'nik1'),(4,'2020-11-23 00:00:00',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ffdsd',415612,'nik1');
+INSERT INTO `order1` VALUES (1,'2020-11-23 00:00:00',NULL,1,1,1,1,0,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','tttt',415612,'nik1'),(2,'2020-11-23 00:00:00',NULL,1,1,0,0,1,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','fdfdf',415612,'nik1'),(3,'2020-11-23 00:00:00',NULL,0,0,0,0,0,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ewew',415612,'nik1'),(4,'2020-11-23 00:00:00',NULL,0,0,0,0,0,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','ffdsd',415612,'nik1'),(5,'2020-12-02 00:00:00',NULL,0,0,0,0,0,NULL,'Nikhil Mangesh Shirdhankar','nikhil295@gmail.com','Ratnagiri',415612,'nik1');
 /*!40000 ALTER TABLE `order1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -222,7 +221,7 @@ CREATE TABLE `order_details` (
   `User_Name` varchar(45) DEFAULT NULL,
   `Owner` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Order_Detail_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -231,7 +230,7 @@ CREATE TABLE `order_details` (
 
 LOCK TABLES `order_details` WRITE;
 /*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
-INSERT INTO `order_details` VALUES (9,4,9,'Club House Pizza',1,140,140,'nik1',''),(10,4,11,'Chicken Overload',1,150,150,'nik1',''),(11,4,4,'Rolls',1,80,80,'nik1',''),(12,4,8,'Corn Pizza',1,80,80,'nik1','Admin');
+INSERT INTO `order_details` VALUES (9,4,9,'Club House Pizza',1,140,140,'nik1',''),(10,4,11,'Chicken Overload',1,150,150,'nik1',''),(11,4,4,'Rolls',1,80,80,'nik1',''),(12,4,8,'Corn Pizza',1,80,80,'nik1','Admin'),(13,5,1,'Pepperoni Pizza',1,120,120,'nik1',''),(14,5,10,'Mexican Pizza',4,120,480,'nik1','Admin');
 /*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +252,7 @@ CREATE TABLE `shop_cart` (
   `User_Name_1` varchar(50) DEFAULT NULL,
   `Owner` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`Shop_Cart_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +261,7 @@ CREATE TABLE `shop_cart` (
 
 LOCK TABLES `shop_cart` WRITE;
 /*!40000 ALTER TABLE `shop_cart` DISABLE KEYS */;
-INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',8,120,'2020-09-17 00:00:00',960,'Cust1',NULL),(2,8,'Corn Pizza',2,80,'2020-09-17 00:00:00',160,'Cust1',NULL),(7,31,'TestFood',1,12,'2020-09-20 00:00:00',12,'Cust1',NULL),(8,7,'Tomato Soup',1,100,'2020-09-20 00:00:00',100,'Cust1',NULL),(9,2,'Tripple Rice',2,89,'2020-09-20 00:00:00',178,'Cust1',NULL),(10,4,'Rolls',1,80,'2020-09-20 00:00:00',80,'Cust1',NULL),(11,9,'Club House Pizza',1,140,'2020-09-20 00:00:00',140,'Cust1',NULL),(12,13,'Korean Noodles',1,130,'2020-09-27 00:00:00',130,'Cust1',NULL),(15,1,'Pepperoni Pizza',7,120,'2020-11-23 00:00:00',840,'Admin',NULL),(16,9,'Club House Pizza',1,140,'2020-11-23 00:00:00',140,'Admin',NULL),(17,11,'Chicken Overload',1,150,'2020-11-23 00:00:00',150,'Admin',NULL);
+INSERT INTO `shop_cart` VALUES (1,1,'Pepperoni Pizza',8,120,'2020-09-17 00:00:00',960,'Cust1',NULL),(2,8,'Corn Pizza',2,80,'2020-09-17 00:00:00',160,'Cust1',NULL),(7,31,'TestFood',1,12,'2020-09-20 00:00:00',12,'Cust1',NULL),(8,7,'Tomato Soup',1,100,'2020-09-20 00:00:00',100,'Cust1',NULL),(9,2,'Tripple Rice',2,89,'2020-09-20 00:00:00',178,'Cust1',NULL),(10,4,'Rolls',1,80,'2020-09-20 00:00:00',80,'Cust1',NULL),(11,9,'Club House Pizza',1,140,'2020-09-20 00:00:00',140,'Cust1',NULL),(12,13,'Korean Noodles',1,130,'2020-09-27 00:00:00',130,'Cust1',NULL),(15,1,'Pepperoni Pizza',7,120,'2020-11-23 00:00:00',840,'Admin',NULL),(16,9,'Club House Pizza',1,140,'2020-11-23 00:00:00',140,'Admin',NULL),(17,11,'Chicken Overload',1,150,'2020-11-23 00:00:00',150,'Admin',NULL),(28,1,'Pepperoni Pizza',1,120,'2020-12-02 00:00:00',120,'nik12',''),(29,9,'Club House Pizza',1,140,'2020-12-02 00:00:00',140,'nik12','Admin'),(30,11,'Chicken Overload',1,150,'2020-12-02 00:00:00',150,'nik12','Admin'),(31,1,'Pepperoni Pizza',1,120,'2020-12-02 00:00:00',120,'nik1',''),(32,9,'Club House Pizza',1,140,'2020-12-02 00:00:00',140,'nik1','Admin');
 /*!40000 ALTER TABLE `shop_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -275,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-23 21:52:11
+-- Dump completed on 2020-12-02 23:06:06
