@@ -44,7 +44,7 @@ namespace OnlineFastFood
         {
             bool x;
             currentuser1 = User.Identity.Name.ToString();
-            x = Roles.IsUserInRole("SAdmin");
+            x = Roles.IsUserInRole("Sadmin");
             if (x == true)
             {
                 Response.Redirect("/SuperAdmin/SAdminHome.aspx");
