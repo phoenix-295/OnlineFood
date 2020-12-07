@@ -57,6 +57,7 @@
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="../HomePage1.aspx">Home</a></li>
+                                <li role="presentation"><a href="Change_Password.aspx">Change Password</a></li>
 								<%--<li role="presentation"><a href="../Admin/AdminHome.aspx">Admin</a></li>
 								<li role="presentation"><a href="Cust_Home.aspx" class="active">Customer</a></li>	--%>															
 								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>					

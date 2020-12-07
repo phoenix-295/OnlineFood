@@ -10,23 +10,27 @@ namespace OnlineFastFood
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        string role1, currentuser1;
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-            currentuser1 = User.Identity.Name.ToString();
-            getcust();
+            
         }
 
-        protected void getcust()
+        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-            bool x;
-            
-            x = Roles.IsUserInRole("Customer");
-            if (x == true)
+            if (Membership.ValidateUser(Login1.UserName, Login1.Password))
             {
-                Response.Redirect("Cust_regestration.aspx");
+                if (Roles.IsUserInRole(Login1.UserName, "Admin"))
+                {
+                    Response.Redirect("/Admin/AdminHome.aspx");
+                }
+                if (Roles.IsUserInRole(Login1.UserName, "Sadmin"))
+                {
+                    Response.Redirect("SuperAdmin/SAdminHome.aspx");
+                }
             }
         }
 
+        
     }
 }

@@ -111,11 +111,13 @@
             <table class="nav-justified">
                 <tr style="vertical-align:top">
                     <td class="auto-style1">
-                        <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black">
+                        <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black" OnAuthenticate="Login1_Authenticate">
                         </asp:Login>
                         </td>
                     <td>
                         <asp:HyperLink ID="HyperLink1" runat="server" CssClass="HeaderBarThreshold" NavigateUrl="~/Cust_regestration.aspx" style="font-size: medium">Not a member? Click here to register</asp:HyperLink>
+                        <br />
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="HeaderBarThreshold" NavigateUrl="~/Reset_Password.aspx" style="font-size: medium">Reset Password</asp:HyperLink>
                     </td>
                 </tr>
             </table>

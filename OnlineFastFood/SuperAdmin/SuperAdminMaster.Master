@@ -107,7 +107,7 @@
 
             <asp:Menu ID="Menu1" runat="server" BackColor="#DAB273" CssClass="auto-style3" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt">
                 <Items>
-                    <asp:MenuItem NavigateUrl="~/Admin/AdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/SuperAdmin/SAdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/SuperAdmin/Food_Category.aspx" Text="Add Food Category" Value="Category"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="New Item"></asp:MenuItem>

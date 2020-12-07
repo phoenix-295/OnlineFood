@@ -36,6 +36,10 @@
         .auto-style5 {
             color: #000000;
         }
+        .auto-style6 {
+            color: #000000;
+            width: 192px;
+        }
     </style>
 
 </head>
@@ -113,11 +117,13 @@
 	<section id="about">
         <div class="container">
            
-
+            <asp:ScriptManager ID="MainScriptManager" runat="server" />
+             <asp:UpdatePanel ID="panel1" runat="server">
+            <ContentTemplate>
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style3">
-                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser">
+                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser" BackColor="#DAB273">
                     <WizardSteps>
                         <asp:WizardStep runat="server" Title="Reg">
                             <table class="style11">
@@ -224,7 +230,7 @@
                         </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">
+                    <td class="auto-style6">
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="auto-style2" />
 
                         </td>
@@ -232,7 +238,9 @@
                         &nbsp;</td>
                 </tr>
             </table>
-           
+           </ContentTemplate>
+</asp:UpdatePanel>
+
 
         </div><!--/.container-->
     </section><!--/#about-->
