@@ -111,7 +111,7 @@
             <table class="nav-justified">
                 <tr style="vertical-align:top">
                     <td class="auto-style1">
-                        <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black">
+                        <asp:Login ID="Login1" runat="server" BackColor="#DAB273" Font-Bold="False" Font-Italic="False" Font-Size="12pt" Width="335px" ForeColor="Black" OnAuthenticate="Login1_Authenticate">
                         </asp:Login>
                         </td>
                     <td>
