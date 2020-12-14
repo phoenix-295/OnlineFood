@@ -1,10 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="FoodDetails.aspx.cs" Inherits="OnlineFastFood.Admin.FoodDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-     <asp:ScriptManager ID="MainScriptManager" runat="server" />
+     <%--<asp:ScriptManager ID="MainScriptManager" runat="server" />
         <asp:UpdatePanel ID="pnlHelloWorld" runat="server">
-            <ContentTemplate>
-
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="gv1" EventName="RowUpdating"/>
+            </Triggers>--%>
+            <%--<ContentTemplate>--%>
+                <div class="input-group">
                 <table class="nav-justified">
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
@@ -12,13 +15,13 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td class="text-center" colspan="3" style="font-size: 18px; color: #000000; height: 42px;"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
+            <td class="text-center" colspan="3" style="font-size: 24px; color: #000000; height: 42px;"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
                 </span></td>
         </tr> 
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 27px;"><span style="color: #000000">IItem Name</span></td>
+            <td style="font-size: 18px; color: #000000; width: 205px; height: 27px;"><h4><span style="color: #000000">Item Name</span></h4></td>
             <td style="height: 27px; width: 919px">
-                <asp:TextBox ID="txtitemname" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <asp:TextBox class="form-control"  ID="txtitemname" runat="server" style="font-size: 9pt; left: 0px; top: 0px; width: 25%;" ForeColor="Black"></asp:TextBox>
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtitemname" ErrorMessage="Item Name Cannot Be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
                 </strong>
@@ -26,7 +29,7 @@
             <td style="height: 27px"></td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Category </span></td>
+            <td style="font-size: 18px; color: #000000; width: 205px"><h4><span style="color: #000000">Category </span></h4></td>
             <td style="font-size: 18px; width: 919px">
                 <asp:DropDownList ID="cat_dropdown" runat="server" style="font-size: 18px" Width="169px" ForeColor="Black">
                 </asp:DropDownList>
@@ -34,9 +37,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Item details</span></td>
+            <td style="font-size: 18px; color: #000000; width: 205px"><h4><span style="color: #000000">Item details</span></h4></td>
             <td style="width: 919px">
-                <asp:TextBox ID="txtitemdetails" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <asp:TextBox class="form-control" ID="txtitemdetails" runat="server" style="font-size: 9pt; left: 0px; top: 0px; width: 25%;" ForeColor="Black"></asp:TextBox>
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtitemdetails" ErrorMessage="Item Details Field cannot be empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
                 </strong>
@@ -44,13 +47,13 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Image 1</span></td>
+            <td style="font-size: 18px; color: #000000; width: 205px"><h4><span style="color: #000000">Image 1</span></h4></td>
             <td style="width: 919px">
                 <table class="nav-justified">
                     <tr>
                         <td style="width: 313px">
                               
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg, image/jpg, image/png" onchange="Filevalidation()"/>
+                <asp:FileUpload class="btn btn-sm float-left" ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 11pt" accept="image/png, image/jpeg, image/jpg, image/png" onchange="Filevalidation()" Width="331px"/>
                         </td>
                         <td>
                             <strong>
@@ -64,12 +67,12 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">IImage 2</td>
+            <td style="font-size: 18px; color: #000000; width: 205px"><h4>Image 2</h4></td>
             <td style="width: 919px">
                 <table class="nav-justified">
                     <tr>
                         <td style="width: 313px">
-                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation1()"/>
+                <asp:FileUpload class="btn btn-sm float-left" ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 11pt" accept="image/png, image/jpeg" onchange="Filevalidation1()" Width="331px"/>
                         </td>
                         <td>
                             <strong>
@@ -83,9 +86,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 23px;">Was Price</td>
+            <td style="font-size: 18px; color: #000000; width: 205px; height: 23px;"><h4> Was Price</h4></td>
             <td style="width: 919px; height: 23px;">
-                <asp:TextBox ID="txtwas" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <asp:TextBox class="form-control" style="font-size: 9pt; left: 0px; top: 0px; width: 25%;" ID="txtwas" runat="server"  ForeColor="Black"></asp:TextBox>
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtwas" ErrorMessage="Was Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
                 <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtwas" ErrorMessage="Invalid Was price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
@@ -94,9 +97,9 @@
             <td style="height: 23px"></td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">Now Price</td>
+            <td style="font-size: 18px; color: #000000; width: 205px"><h4>Now Price</h4></td>
             <td style="width: 919px">
-                <asp:TextBox ID="txtnow" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
+                <asp:TextBox class="form-control" style="font-size: 9pt; left: 0px; top: 0px; width: 25%;" ID="txtnow" runat="server" ForeColor="Black"></asp:TextBox>
                 <strong>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtnow" ErrorMessage="Now Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
                 <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtnow" ErrorMessage="Invalid Now Price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
@@ -111,10 +114,10 @@
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 33px;">
-                <asp:Button ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                <asp:Button BackColor="#DAB273" ForeColor="White" class="btn btn-success" ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
             </td>
             <td style="font-size: 18px; color: #000000; width: 919px; height: 33px;">
-                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" OnClick="btnclear_Click" CausesValidation="False" />
+                <asp:Button ForeColor="White" BackColor="#DAB273" class="btn btn-success" ID="btnclear" runat="server" Text="Clear" OnClick="btnclear_Click" CausesValidation="False" />
             </td>
             <td style="height: 33px"></td>
         </tr>
@@ -124,36 +127,73 @@
             <td style="height: 22px"></td>
         </tr>
         <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
-            <td style="text-align:center; align-content:center; font-size: 18px; width: 919px" >
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" OnRowDeleting="gv1_RowDeleting" AllowPaging="True" OnPageIndexChanging="gv1_PageIndexChanging" PageSize="5" >
+            <td style="font-size: 18px; color: #000000; " colspan="3">
+                <asp:GridView ID="gv1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Item_Code" ForeColor="#C6A674" OnPageIndexChanging="gv1_PageIndexChanging" OnRowDeleting="gv1_RowDeleting" OnRowUpdating="gv1_RowUpdating" PageSize="5" style="color: #000000" Width="885px" Height="199px">
                     <Columns>
-                        <asp:TemplateField HeaderText="Item Name">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                <h4>Item Name</h4>
+                                    </div>
+                            </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbliname" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
+                                <h5 style="text-align:center"><asp:Label ID="lbliname" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category Id">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                    <h4>Category Id</h4>
+                                </div>
+                            </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblcatid" runat="server" Text='<%# Eval("Cat_ID") %>'></asp:Label>
+                                <h5 style="text-align:center"><asp:Label ID="lblcatid" runat="server" Text='<%# Eval("Cat_ID") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Item Details">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                    <h4>
+                                        Item Details
+                                    </h4>
+                                </div>
+                            </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblitemdetails" runat="server" Text='<%# Eval("Item_Details") %>'></asp:Label>
+                                <h5 style="text-align:center"><asp:Label ID="lblitemdetails" runat="server" Text='<%# Eval("Item_Details") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Was Price">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                    <h4>
+                                        Was Price
+                                    </h4>
+                                </div>
+                            </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblwasprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label>
+                                <h5 style="text-align:center"><asp:Label ID="lblwasprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Now Price">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                    <h4>
+                                        Now Price
+                                    </h4>
+                                </div>
+                            </HeaderTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Now_Price") %>'></asp:Label>
+                                <h5 style="text-align:center"><asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Now_Price") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Operations">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <div style="text-align:center">
+                                    <h4>
+                                        Operations
+                                    </h4>
+                                </div>
+                            </HeaderTemplate>
                             <EditItemTemplate>
                                 <asp:Button ID="btnupdate" runat="server" CommandName="Update" Text="Update" />
                                 <asp:Button ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -162,16 +202,17 @@
                                 <asp:Button ID="btnaddnew" runat="server" CommandName="AddNew" Text="Add New" />
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Button ID="btnedit" runat="server" CommandName="Update" Text="Edit" CausesValidation="False" />
-                                <asp:Button ID="btndelete" runat="server" CommandName="Delete" Text="Delete" CausesValidation="False" />
+                                <div style="vertical-align:central">
+                                <asp:Button class="btn" ForeColor="White" BackColor="#D9AE6A" ID="btnedit" runat="server" CausesValidation="False" CommandName="Update" Text="Edit" />
+                                <asp:Button class="btn" ForeColor="White" BackColor="#D9AE6A" ID="btndelete" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                                    </div>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                     <HeaderStyle BackColor="#C6A674" ForeColor="#FFFFCC" />
-                    <PagerStyle BackColor="#C6A674" ForeColor="Black" />
+                    <PagerStyle HorizontalAlign="Center" BackColor="#C6A674" ForeColor="Black" />
                 </asp:GridView>
             </td>
-            <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 22px;"></td>
@@ -189,196 +230,14 @@
         </tr>
     </table>
 
-
-                </ContentTemplate>
-</asp:UpdatePanel>
-
-
+                    </div>
+                <%--</ContentTemplate>
+</asp:UpdatePanel>--%>
 
 
-    <%--<table class="nav-justified">
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
-            <td style="font-size: 18px; width: 919px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="text-center" colspan="3" style="font-size: 18px; color: #000000; height: 42px;"><span style="color: #C6A674; "><strong>Food Details</strong></span><span style="color: #000000"><br />
-                </span></td>
-        </tr> 
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 27px;"><span style="color: #000000">IItem Name</span></td>
-            <td style="height: 27px; width: 919px">
-                <asp:TextBox ID="txtitemname" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
-                <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtitemname" ErrorMessage="Item Name Cannot Be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
-                </strong>
-            </td>
-            <td style="height: 27px"></td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Category </span></td>
-            <td style="font-size: 18px; width: 919px">
-                <asp:DropDownList ID="cat_dropdown" runat="server" style="font-size: 18px" Width="169px" ForeColor="Black">
-                </asp:DropDownList>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Item details</span></td>
-            <td style="width: 919px">
-                <asp:TextBox ID="txtitemdetails" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
-                <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtitemdetails" ErrorMessage="Item Details Field cannot be empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
-                </strong>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px"><span style="color: #000000">Image 1</span></td>
-            <td style="width: 919px">
-                <table class="nav-justified">
-                    <tr>
-                        <td style="width: 313px">
-                              
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg, image/jpg, image/png" onchange="Filevalidation()"/>
-                        </td>
-                        <td>
-                            <strong>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Image 1 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
-                            </strong>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="FileUpload1" ErrorMessage="Must Be an Image File." style="color: #FF0000" ValidationExpression="(.*?)\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$" >*</asp:RegularExpressionValidator>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">IImage 2</td>
-            <td style="width: 919px">
-                <table class="nav-justified">
-                    <tr>
-                        <td style="width: 313px">
-                <asp:FileUpload ID="FileUpload2" runat="server" ForeColor="Black" style="font-size: 18px" accept="image/png, image/jpeg" onchange="Filevalidation1()"/>
-                        </td>
-                        <td>
-                            <strong>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FileUpload2" ErrorMessage="Image 2 Cannot be empty" style="color: #FF0000">*</asp:RequiredFieldValidator>
-                            </strong>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="FileUpload2" ErrorMessage="Must Be an Image File." style="color: #FF0000" ValidationExpression="(.*?)\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$">*</asp:RegularExpressionValidator>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 23px;">Was Price</td>
-            <td style="width: 919px; height: 23px;">
-                <asp:TextBox ID="txtwas" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
-                <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtwas" ErrorMessage="Was Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
-                <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtwas" ErrorMessage="Invalid Was price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
-                </strong>
-            </td>
-            <td style="height: 23px"></td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">Now Price</td>
-            <td style="width: 919px">
-                <asp:TextBox ID="txtnow" runat="server" style="font-size: 18px" ForeColor="Black"></asp:TextBox>
-                <strong>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtnow" ErrorMessage="Now Price Cannot Be Empty." style="color: #FF0000">*</asp:RequiredFieldValidator>
-                <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtnow" ErrorMessage="Invalid Now Price." MaximumValue="400" MinimumValue="0" style="color: #FF0000" Type="Integer">*</asp:RangeValidator>
-                </strong>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
-            <td style="font-size: 18px; width: 919px">&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 33px;">
-                <asp:Button ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
-            </td>
-            <td style="font-size: 18px; color: #000000; width: 919px; height: 33px;">
-                <asp:Button ID="btnclear" runat="server" Text="Clear" style="font-size: 18px" OnClick="btnclear_Click" CausesValidation="False" />
-            </td>
-            <td style="height: 33px"></td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 22px;"></td>
-            <td style="font-size: 18px; width: 919px; height: 22px;"></td>
-            <td style="height: 22px"></td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
-            <td style="text-align:center; align-content:center; font-size: 18px; width: 919px" >
-                <asp:GridView ID="gv1" runat="server" AutoGenerateColumns="False"  ForeColor="#C6A674" Width="885px" style="color: #000000" OnRowUpdating="gv1_RowUpdating" DataKeyNames="Item_Code" OnRowDeleting="gv1_RowDeleting" AllowPaging="True" OnPageIndexChanging="gv1_PageIndexChanging" PageSize="5" >
-                    <Columns>
-                        <asp:TemplateField HeaderText="Item Name">
-                            <ItemTemplate>
-                                <asp:Label ID="lbliname" runat="server" Text='<%# Eval("Item_Name") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category Id">
-                            <ItemTemplate>
-                                <asp:Label ID="lblcatid" runat="server" Text='<%# Eval("Cat_ID") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Item Details">
-                            <ItemTemplate>
-                                <asp:Label ID="lblitemdetails" runat="server" Text='<%# Eval("Item_Details") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Was Price">
-                            <ItemTemplate>
-                                <asp:Label ID="lblwasprice" runat="server" Text='<%# Eval("Was_Price") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Now Price">
-                            <ItemTemplate>
-                                <asp:Label ID="lblnowprice" runat="server" Text='<%# Eval("Now_Price") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Operations">
-                            <EditItemTemplate>
-                                <asp:Button ID="btnupdate" runat="server" CommandName="Update" Text="Update" />
-                                <asp:Button ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" />
-                            </EditItemTemplate>
-                            <FooterTemplate>
-                                <asp:Button ID="btnaddnew" runat="server" CommandName="AddNew" Text="Add New" />
-                            </FooterTemplate>
-                            <ItemTemplate>
-                                <asp:Button ID="btnedit" runat="server" CommandName="Update" Text="Edit" CausesValidation="False" />
-                                <asp:Button ID="btndelete" runat="server" CommandName="Delete" Text="Delete" CausesValidation="False" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                    <HeaderStyle BackColor="#C6A674" />
-                    <PagerStyle BackColor="#C6A674" ForeColor="Black" />
-                </asp:GridView>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px; height: 22px;"></td>
-            <td style="font-size: 18px; width: 919px; height: 22px;">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color: #FF0000" />
-            </td>
-            <td style="height: 22px"></td>
-        </tr>
-        <tr>
-            <td style="font-size: 18px; color: #000000; width: 205px">&nbsp;</td>
-            <td style="font-size: 18px; color: #000000; width: 919px">
-                <asp:Label ID="lblmsg" runat="server"></asp:Label>
-            </td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>--%>
+
+
+    
     <script type = "text/javascript">
 
         function Filevalidation()

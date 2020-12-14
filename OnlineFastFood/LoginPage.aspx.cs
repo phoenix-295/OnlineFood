@@ -16,20 +16,7 @@ namespace OnlineFastFood
             
         }
 
-        protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
-        {
-            if (Membership.ValidateUser(Login1.UserName, Login1.Password))
-            {
-                if (Roles.IsUserInRole(Login1.UserName, "Admin"))
-                {
-                    Response.Redirect("/Admin/AdminHome.aspx");
-                }
-                if (Roles.IsUserInRole(Login1.UserName, "Sadmin"))
-                {
-                    Response.Redirect("SuperAdmin/SAdminHome.aspx");
-                }
-            }
-        }
+       
 
         
     }

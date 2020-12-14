@@ -2,30 +2,47 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="style6">
         <tr>
-            <td class="style7">
+            <td>
                 &nbsp;</td>
             <td class="style7">
                 &nbsp;</td>
         </tr>
         <tr>
             <td class="style7" colspan="2">
-                <span style="color: #000000; font-size: medium;">Show Most Recent</span>
-                <asp:TextBox ID="txtmr" runat="server" BackColor="White" ForeColor="White" 
-                    style="color: #800000; font-size: medium;"></asp:TextBox>
-                <span style="font-size: medium">&nbsp;</span><span style="color: #000000"><span style="font-size: medium">Record</span></span><span style="font-size: medium">s
-                </span>
-                <asp:Button ID="btngo" runat="server" 
+                <table class="nav-justified">
+                    <tr>
+                        <td style="width: 176px"><h4><span>Show Most Recent</span> </h4></td>
+                        <td class="modal-sm" style="width: 261px">
+                <span>
+                <asp:TextBox class="form-control" Width="232px" ID="txtmr" runat="server" BackColor="White" ForeColor="White" 
+                    style="color: #800000; font-size: medium;"></asp:TextBox></span>
+                        </td>
+                        <td class="modal-sm" style="width: 84px"><h4>&nbsp;Records</h4>
+                        </td>
+                        <td><asp:Button ID="btngo" runat="server" 
                     style="font-family: 'Comic Sans MS'; font-size: medium" Text="Go" 
                     BackColor="Maroon" ForeColor="White" OnClick="btngo_Click" />
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
-            <td class="style7" colspan="2" style="height: 43px; font-size: 14pt;">
-                <span style="color: #000000"><span style="font-size: medium">Show All Cancled Records</span>&nbsp;
-                </span>
+            <td style="height: 43px; font-size: 14pt; ">
+                <table class="nav-justified">
+                    <tr>
+                        <td style="width: 260px">
+                <h4 style="width: 242px">Show All Cancled Records</h4>
+                        </td>
+                        <td>
+                <span>
                 <asp:Button ID="btng1" runat="server" 
                     style="font-family: 'Comic Sans MS'; font-size: 14pt" Text="Go" 
                     BackColor="Maroon" ForeColor="White" OnClick="btng1_Click" />
+                    </span>
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>

@@ -15,7 +15,7 @@
     <tr>
         <td>
             <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Customer/Shop_Cart.aspx">Items :</asp:HyperLink>
-&nbsp;<asp:Label ID="lblq" runat="server"></asp:Label>
+&nbsp;<asp:Label class="badge" ID="lblq" runat="server"></asp:Label>
         </td>
     </tr>
     <tr>

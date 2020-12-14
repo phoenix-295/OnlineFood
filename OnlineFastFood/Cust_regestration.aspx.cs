@@ -22,7 +22,6 @@ namespace OnlineFastFood
         {
             try
             {
-                CreateUserWizard1.Email = txtmail.Text;
                 string conn = ConfigurationManager.ConnectionStrings["FoodDatabase"].ConnectionString;
 
                 MySqlConnection ocon = new MySqlConnection(conn);
@@ -30,6 +29,7 @@ namespace OnlineFastFood
                 ocon.Open();
                 string mUserName = CreateUserWizard1.UserName;
                 string pass = CreateUserWizard1.Password;
+                string mailid = CreateUserWizard1.Email;
                 MySqlCommand cmd = new MySqlCommand("INSERT into cust_registration (f_name,m_name,l_name,contact_no,adress,state,city,email_id,pin_code,user_name,pass) values(@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k)", ocon);
                 cmd.Parameters.AddWithValue("@a", txtfname.Text);
                 cmd.Parameters.AddWithValue("@b", txtmname.Text);
@@ -38,7 +38,7 @@ namespace OnlineFastFood
                 cmd.Parameters.AddWithValue("@e", txtadress.Text);
                 cmd.Parameters.AddWithValue("@f", txtloc.Text);
                 cmd.Parameters.AddWithValue("@g", txtcity.Text);
-                cmd.Parameters.AddWithValue("@h", txtmail.Text);
+                cmd.Parameters.AddWithValue("@h", mailid);
                 cmd.Parameters.AddWithValue("@i", txtpin.Text);
                 cmd.Parameters.AddWithValue("@j", mUserName);
                 cmd.Parameters.AddWithValue("@k", pass);

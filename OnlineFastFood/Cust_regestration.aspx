@@ -40,6 +40,9 @@
             color: #000000;
             width: 192px;
         }
+        .auto-style7 {
+            font-size: 12pt;
+        }
     </style>
 
 </head>
@@ -123,15 +126,18 @@
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style3">
-                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser" BackColor="#DAB273">
+                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser" BackColor="#DAB273" ActiveStepIndex="1">
                     <WizardSteps>
                         <asp:WizardStep runat="server" Title="Reg">
                             <table class="style11">
                             <tr>
                                 <td>
-                                    FirstName</td>
+                                    <h4>
+                                        FirstName
+                                    </h4></td>
+
                                 <td>
-                                    <asp:TextBox ID="txtfname" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="First Name" class="form-control" ID="txtfname" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                         ControlToValidate="txtfname" ErrorMessage="First Name cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -139,27 +145,39 @@
                             </tr>
                             <tr>
                                 <td class="style12">
-                                    Middle Name:</td>
+                                    
+                                    <h4>
+                                    Middle Name:
+
+                                    </h4>
+
+
+                                </td>
                                 <td class="style12">
-                                    <asp:TextBox ID="txtmname" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Middle Name" class="form-control" ID="txtmname" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                         ControlToValidate="txtmname" ErrorMessage="Middle Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="style12">
-                                    Last Name:</td>
+                                    <h4>
+
+                                    Last Name:
+                                    </h4>
+                                        </td>
+
                                 <td class="style12">
-                                    <asp:TextBox ID="txtlastname" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Last Name" class="form-control" ID="txtlastname" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                         ControlToValidate="txtlastname" ErrorMessage="Last Name cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Mobile No:</td>
+                                    <h4>Mobile No:</h4></td>
                                 <td>
-                                    <asp:TextBox ID="txtcontact" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Mobile no." class="form-control" ID="txtcontact" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                                         ControlToValidate="txtcontact" ErrorMessage="Mobile Number cannot be empty." 
                                         ForeColor="Red">*</asp:RequiredFieldValidator>
@@ -169,9 +187,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Address:</td>
+                                    <h4>Address:</h4></td>
                                 <td>
-                                    <asp:TextBox ID="txtadress" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Address" class="form-control" ID="txtadress" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                                         ControlToValidate="txtadress" ErrorMessage="Address cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
@@ -179,18 +197,18 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Location:</td>
+                                    <h4>Location:</h4></td>
                                 <td>
-                                    <asp:TextBox ID="txtloc" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Location" class="form-control" ID="txtloc" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                                         ControlToValidate="txtloc" ErrorMessage="Location cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="style15">
-                                    City :</td>
+                                    <h4>City :</h4></td>
                                 <td class="style15">
-                                    <asp:TextBox ID="txtcity" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="City" class="form-control" ID="txtcity" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                                         ControlToValidate="txtcity" ErrorMessage="City cannot be empty." 
                                         ForeColor="#FF3300">*</asp:RequiredFieldValidator>
@@ -198,21 +216,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    Email Id:</td>
+                                    <h4>Pin: </h4></td>
                                 <td>
-                                    <asp:TextBox ID="txtmail" runat="server"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                                        ControlToValidate="txtmail" ErrorMessage="Enter Valid Email Adress." 
-                                        ForeColor="Red" 
-                                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtmail" CssClass="auto-style2" ErrorMessage="Email cannot be empty.">*</asp:RequiredFieldValidator>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Pin :</td>
-                                <td>
-                                    <asp:TextBox ID="txtpin" runat="server"></asp:TextBox>
+                                    <asp:TextBox placeholder="Pincode" class="form-control" ID="txtpin" runat="server" CssClass="auto-style7"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                                         ControlToValidate="txtpin" ErrorMessage="Pin Cannot be empty." ForeColor="Red">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtpin" CssClass="auto-style2" ErrorMessage="Pin must be 6 digit." ValidationExpression="[0-9]{6}">*</asp:RegularExpressionValidator>
@@ -220,7 +226,83 @@
                             </tr>
                         </table>
                         </asp:WizardStep>
-                        <asp:CreateUserWizardStep runat="server" />
+                        <asp:CreateUserWizardStep runat="server" >
+                            <ContentTemplate>
+                                <table style="background-color:#DAB273;font-size:100%;height:258px;width:367px;">
+                                    <tr>
+                                        <td align="center" colspan="2"><h3>Sign Up for Your New Account</h3></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" style="vertical-align:middle">
+                                            <h4>
+                                            <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label></h4>
+                                        </td>
+                                        <td>          
+                                            <asp:TextBox placeholder="UserName" class="form-control" ID="UserName" runat="server" CssClass="auto-style7"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h4>
+                                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label></h4>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox placeholder="Password" class="form-control" ID="Password" runat="server" CssClass="auto-style7" TextMode="Password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h4><asp:Label ID="ConfirmPasswordLabel" runat="server" AssociatedControlID="ConfirmPassword">Confirm Password:</asp:Label></h4>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox placeholder="Confirm Password" class="form-control" ID="ConfirmPassword" runat="server" TextMode="Password" CssClass="auto-style7"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h4><asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">E-mail:</asp:Label></h4>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox placeholder="Email" class="form-control" ID="Email" runat="server" CssClass="auto-style7"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email" ErrorMessage="E-mail is required." ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h4><asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question">Security Question:</asp:Label></h4>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox placeholder="Question" class="form-control" ID="Question" runat="server" CssClass="auto-style7"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="QuestionRequired" runat="server" ControlToValidate="Question" ErrorMessage="Security question is required." ToolTip="Security question is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <h4><asp:Label ID="AnswerLabel" runat="server" AssociatedControlID="Answer">Security Answer:</asp:Label></h4>
+                                        </td>
+                                        <td>
+                                            <asp:TextBox placeholder="Answer" class="form-control" ID="Answer" runat="server" CssClass="auto-style7"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Security answer is required." ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" colspan="2">
+                                            <h3>
+                                            <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator></h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" colspan="2" style="color:Red;">
+                                            <h3>
+                                            <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal></h3>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ContentTemplate>
+                        </asp:CreateUserWizardStep>
                         <asp:CompleteWizardStep runat="server" />
                     </WizardSteps>
                 </asp:CreateUserWizard>
@@ -231,8 +313,9 @@
                 </tr>
                 <tr>
                     <td class="auto-style6">
+                        <h4>
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="auto-style2" />
-
+                            </h4>
                         </td>
                     <td>
                         &nbsp;</td>

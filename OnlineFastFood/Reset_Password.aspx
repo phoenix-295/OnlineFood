@@ -33,6 +33,12 @@
         .auto-style2 {
             color: #000000;
         }
+        .auto-style3 {
+            font-size: 12pt;
+        }
+        .auto-style4 {
+            width: 338px;
+        }
     </style>
 
 </head>
@@ -116,7 +122,45 @@
             <table class="nav-justified">
                 <tr style="vertical-align:top">
                     <td class="auto-style1">
-                        <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" BackColor="#DAB273" CssClass="auto-style2" Font-Size="12pt" Width="449px">
+                        <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" BackColor="#DAB273" CssClass="auto-style2" Font-Size="12pt" Width="360px">
+                            <UserNameTemplate>
+                                <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" class="auto-style4">
+                                                <tr>
+                                                    <td align="center" colspan="2"><h3>Forgot Your Password?</h3></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" colspan="2">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <%--<td align="right">
+                                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                                    </td>--%>
+                                                    <td>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                            <asp:TextBox placeholder="Username" class="form-control" ID="UserName" runat="server" CssClass="auto-style3" Width="284px"></asp:TextBox>
+                                                            <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="PasswordRecovery1">*</asp:RequiredFieldValidator>
+                                                            </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" colspan="2" style="color:Red;">
+                                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right" colspan="2">
+                                                        <asp:Button class="btn btn-success btn-block" ID="SubmitButton" runat="server" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery1" Width="313px" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </UserNameTemplate>
                         </asp:PasswordRecovery>
                         </td>
                     <td>

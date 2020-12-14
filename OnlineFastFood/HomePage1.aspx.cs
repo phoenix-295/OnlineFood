@@ -31,24 +31,24 @@ namespace OnlineFastFood
 
         protected void getadmin()
         {
-            //bool x;
-            //currentuser1 = User.Identity.Name.ToString();
-            //x = Roles.IsUserInRole("Admin");
-            //if (x == true)
-            //{
-            //    Response.Redirect("/Admin/AdminHome.aspx");
-            //}
+            bool x;
+            currentuser1 = User.Identity.Name.ToString();
+            x = Roles.IsUserInRole("Admin");
+            if (x == true)
+            {
+                Response.Redirect("/Admin/AdminHome.aspx");
+            }
         }
 
         protected void getsadmin()
         {
-            //bool x;
-            //currentuser1 = User.Identity.Name.ToString();
-            //x = Roles.IsUserInRole("Sadmin");
-            //if (x == true)
-            //{
-            //    Response.Redirect("/SuperAdmin/SAdminHome.aspx");
-            //}
+            bool x;
+            currentuser1 = User.Identity.Name.ToString();
+            x = Roles.IsUserInRole("Sadmin");
+            if (x == true)
+            {
+                Response.Redirect("/SuperAdmin/SAdminHome.aspx");
+            }
         }
     }
 }

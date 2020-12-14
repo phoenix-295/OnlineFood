@@ -64,8 +64,8 @@
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="../HomePage1.aspx">Home</a></li>
-								<li role="presentation"><a href="AdminHome.aspx" class="active">Admin</a></li>
-								<li role="presentation"><a href="../Customer/Cust_Home.aspx">Customer</a></li>																
+								
+																								
 								<li role="presentation"><asp:LoginStatus ID="LoginStatus2" runat="server" /> </li>						
 							</ul>
 						</div>
@@ -115,11 +115,12 @@
 	</div>
 	
 	<section id="about">
-
+        
         <div class="auto-style2">
-
-            <asp:Menu ID="Menu1" runat="server" BackColor="#DAB273" CssClass="auto-style3" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt">
+            
+            <asp:Menu class="form-control" ID="Menu1" runat="server" BackColor="#DAB273" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt">
                 <Items>
+                    
                     <asp:MenuItem NavigateUrl="~/Admin/AdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
                     <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Admin/FoodCategory.aspx" Text="Category" Value="Category"></asp:MenuItem>
@@ -135,9 +136,10 @@
                     <asp:MenuItem Text="Reports" Value="Reports" NavigateUrl="~/Admin/Display_Reports.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>
+            
 
         </div><!--/.container-->
-
+            
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

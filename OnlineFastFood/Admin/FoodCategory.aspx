@@ -11,50 +11,63 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3" style="height: 106px">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Cat_ID" PageSize="5" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#C6A674" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnSorting="GridView1_Sorting">
+            <td  colspan="3" style="height: 106px">
+                <div>
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Cat_ID" PageSize="5" style="color: #000000; font-size: 11pt" Width="585px" ForeColor="#DAB273" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating" ShowFooter="True" OnRowCommand="GridView1_RowCommand" AllowPaging="True" BackColor="White" BorderStyle="None" CellPadding="4" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDeleting="GridView1_RowDeleting" OnSorting="GridView1_Sorting" Height="257px">
                     <Columns>
-                        <asp:TemplateField HeaderText="Category Title">
+                        
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <h4 style="ruby-align:center">&nbsp;&nbsp;&nbsp;Category Title</h4>
+                            </HeaderTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="txtnameedit" runat="server" Text='<%# Eval("Cat_Title") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:TextBox ID="txtnameadd" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" placeholder="Category Name" ID="txtnameadd" runat="server" style="font-size: 9pt"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lblname" runat="server" Text='<%# Eval("Cat_title") %>'></asp:Label>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblname" runat="server" Text='<%# Eval("Cat_title") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Category Description">
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <h4 style="ruby-align:center">&nbsp;&nbsp;&nbsp;Category Description</h4>
+                            </HeaderTemplate>
                             <EditItemTemplate>
-                                <asp:TextBox ID="txtdescedit" runat="server" Text='<%# Eval("Cat_Desc") %>'></asp:TextBox>
+                                <asp:TextBox  ID="txtdescedit" runat="server" Text='<%# Eval("Cat_Desc") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:TextBox ID="txtdescadd" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" placeholder="Category Description" ID="txtdescadd" runat="server" style="font-size: 9pt"></asp:TextBox>
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="lbldesc" runat="server" Text='<%# Eval("Cat_desc") %>'></asp:Label>
+                                <h5>&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lbldesc" runat="server" Text='<%# Eval("Cat_desc") %>'></asp:Label></h5>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Operations">
+                        
+                        <asp:TemplateField>
+                            <HeaderTemplate>
+                                <h4 style="ruby-align:center">&nbsp;&nbsp;&nbsp;Operations</h4>
+                            </HeaderTemplate>
                             <EditItemTemplate>
-                                <asp:Button ID="btnupdate" runat="server" CausesValidation="False" CommandName="Update" Text="Update" />
-                                <asp:Button ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" />
+                                <asp:Button class="btn" ForeColor="White" Font-Size="12px" BackColor="#D9AE6A" ID="btnupdate" runat="server" CausesValidation="False" CommandName="Update" Text="Update" Height="35px" />
+                                <asp:Button class="btn" ForeColor="White" Font-Size="12px" BackColor="#D9AE6A" ID="btncancel" runat="server" CommandName="Cancel" Text="Cancel" Height="35px" />
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:Button ID="btnadd" runat="server" CommandName="AddNew" Text="Add New" />
+                                <asp:Button class="btn" ForeColor="White" Font-Size="12px" BackColor="#D9AE6A" ID="btnadd" runat="server" CommandName="AddNew" Text="Add New" />
                             </FooterTemplate>
                             <ItemTemplate>
-                                <asp:Button ID="btnedit" runat="server" CausesValidation="False" CommandName="Edit" CssClass="col-xs-offset-0" Text="Edit" Width="82px" />
-                                <asp:Button ID="btndelete" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                                <asp:Button class="btn" ForeColor="White" Font-Size="12px" BackColor="#D9AE6A" ID="btnedit" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" Width="82px" Height="35px" />
+                                <asp:Button class="btn" ForeColor="White" Font-Size="12px" BackColor="#D9AE6A" ID="btndelete" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" Height="35px" />
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                     <FooterStyle BackColor="White" />
-                    <HeaderStyle BackColor="#C6A674" Font-Size="Small" Font-Underline="False" VerticalAlign="Middle" />
-                    <PagerStyle BackColor="#C6A674" ForeColor="White" VerticalAlign="Middle"/>
+                    <HeaderStyle BackColor="#C6A674" ForeColor="#FFFFCC" />
+                    <PagerStyle BackColor="#DAB273" ForeColor="White"/>
                    
                 </asp:GridView>
+                    </div>
             </td>
         </tr>
         <tr>
