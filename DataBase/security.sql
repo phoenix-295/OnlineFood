@@ -77,7 +77,7 @@ CREATE TABLE `my_aspnet_membership` (
 
 LOCK TABLES `my_aspnet_membership` WRITE;
 /*!40000 ALTER TABLE `my_aspnet_membership` DISABLE KEYS */;
-INSERT INTO `my_aspnet_membership` VALUES (1,'nikhil295@gmail.com','','cNBUXz25pET77QfXPmOpH57zTf3pCPRe5j6K58wTbSg=','fyLpwSmkiKJqEv6d5YsDiw==',1,'1','g13vr4zB9maBrPOPWMKDTy74kIMnt0feEeeBDf+gBJQ=',1,'2020-12-02 17:38:10','2020-12-02 17:38:10','2020-12-02 17:29:44','2020-12-02 17:29:44',0,'2020-12-02 17:29:44',0,'2020-12-02 17:29:44',0,'2020-12-02 17:29:44'),(2,'nikhil295@gmail.com','','Lh7hCyafVCsv6Q0mVDDUMrkRroElj3kyPkgVatzIZwE=','vFG/M8tkdmdP9dNXkfpEFA==',1,'1','tiovs4GqD4OYuE6Yzdosf1DUmxblAdIvNlmnxKmyU4Y=',1,'2020-12-02 22:30:20','2020-12-02 22:30:20','2020-12-02 22:29:46','2020-12-02 17:30:12',0,'2020-12-02 17:30:12',2,'2020-12-02 22:21:01',1,'2020-12-02 20:47:27'),(3,'nikhil295@gmail.com','','UbHDh+oOwN0eRGOHcgGAhpynl9bAVY/d5hs67w9bkN8=','vT46rpHk119Y+zR7HBDh5w==',1,'1','cvW0GUpNawq4P9n/lhOyrK0FKpLPxe/SqNpocHUT5Ik=',1,'2020-12-02 22:47:28','2020-12-02 22:47:28','2020-12-02 17:37:24','2020-12-02 17:37:24',0,'2020-12-02 17:37:24',0,'2020-12-02 17:37:24',0,'2020-12-02 17:37:24'),(4,'nikhil295@gmail.com','','WiwD9LBYZ3aKHpv0GyTvQN1NaBHnW4TPLgCwbLJk/9M=','ikNcJvMNtPS+JTX6zBi+mQ==',1,'Your pet name?','Z3n90Zyf/y/7flccEZZbqby5aTn0u3gyHYU20J0/2i4=',1,'2020-12-02 22:42:49','2020-12-02 22:42:49','2020-12-02 22:42:49','2020-12-02 22:42:49',0,'2020-12-02 22:42:49',0,'2020-12-02 22:42:49',0,'2020-12-02 22:42:49');
+INSERT INTO `my_aspnet_membership` VALUES (1,'nikhil295@gmail.com','','cNBUXz25pET77QfXPmOpH57zTf3pCPRe5j6K58wTbSg=','fyLpwSmkiKJqEv6d5YsDiw==',1,'1','g13vr4zB9maBrPOPWMKDTy74kIMnt0feEeeBDf+gBJQ=',1,'2020-12-14 18:52:37','2020-12-14 18:52:37','2020-12-02 17:29:44','2020-12-02 17:29:44',0,'2020-12-02 17:29:44',1,'2020-12-14 11:33:09',0,'2020-12-02 17:29:44'),(2,'nikhil295@gmail.com','','Lh7hCyafVCsv6Q0mVDDUMrkRroElj3kyPkgVatzIZwE=','vFG/M8tkdmdP9dNXkfpEFA==',1,'1','tiovs4GqD4OYuE6Yzdosf1DUmxblAdIvNlmnxKmyU4Y=',1,'2020-12-05 19:25:40','2020-12-05 19:25:40','2020-12-02 22:29:46','2020-12-02 17:30:12',0,'2020-12-02 17:30:12',2,'2020-12-02 22:21:01',1,'2020-12-02 20:47:27'),(3,'nikhil295@gmail.com','','XyhkeBNhusPrfm5reAZtGF1XUXh8RrjCmmeTDVF9K6Q=','vT46rpHk119Y+zR7HBDh5w==',1,'1','cvW0GUpNawq4P9n/lhOyrK0FKpLPxe/SqNpocHUT5Ik=',1,'2020-12-15 10:11:59','2020-12-15 10:11:59','2020-12-15 10:11:05','2020-12-02 17:37:24',0,'2020-12-02 17:37:24',1,'2020-12-04 11:39:27',0,'2020-12-02 17:37:24'),(4,'nikhil295@gmail.com','','WiwD9LBYZ3aKHpv0GyTvQN1NaBHnW4TPLgCwbLJk/9M=','ikNcJvMNtPS+JTX6zBi+mQ==',1,'Your pet name?','Z3n90Zyf/y/7flccEZZbqby5aTn0u3gyHYU20J0/2i4=',1,'2020-12-14 13:29:08','2020-12-14 13:29:08','2020-12-02 22:42:49','2020-12-02 22:42:49',0,'2020-12-02 22:42:49',1,'2020-12-14 13:28:48',0,'2020-12-02 22:42:49'),(5,'nikhil295@gmail.com','','cRMGztg/ZlVki+TgeYnLYf47ZjkmrViMD5UgMOryy2s=','HStpWHoprjfJBw/nPrrz3Q==',1,'1','CRHbOM1uNmDHcvS8Xd7FDrQdoCs1d/lNQn4nuSwwNAg=',1,'2020-12-14 13:37:06','2020-12-14 13:37:06','2020-12-14 13:32:27','2020-12-14 13:32:27',0,'2020-12-14 13:32:27',0,'2020-12-14 13:32:27',0,'2020-12-14 13:32:27'),(6,'nikhil295@gmail.com','','p4c0KMZUm8JRTUYJumMZskq6LU1zy+gRcEPOoN/NPZY=','G8IXgMdNZdoPwcGKxlDDtg==',1,'1','tLzVHgPa6EZY2LDAwvainuEhO+UFWn5HOdwbpMGSMic=',1,'2020-12-14 13:36:18','2020-12-14 13:36:18','2020-12-14 13:35:39','2020-12-14 13:35:39',0,'2020-12-14 13:35:39',0,'2020-12-14 13:35:39',0,'2020-12-14 13:35:39');
 /*!40000 ALTER TABLE `my_aspnet_membership` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,7 +251,7 @@ CREATE TABLE `my_aspnet_sessioncleanup` (
 
 LOCK TABLES `my_aspnet_sessioncleanup` WRITE;
 /*!40000 ALTER TABLE `my_aspnet_sessioncleanup` DISABLE KEYS */;
-INSERT INTO `my_aspnet_sessioncleanup` VALUES ('2020-12-02 22:47:12',10,1);
+INSERT INTO `my_aspnet_sessioncleanup` VALUES ('2020-12-15 10:10:26',10,1);
 /*!40000 ALTER TABLE `my_aspnet_sessioncleanup` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +283,7 @@ CREATE TABLE `my_aspnet_sessions` (
 
 LOCK TABLES `my_aspnet_sessions` WRITE;
 /*!40000 ALTER TABLE `my_aspnet_sessions` DISABLE KEYS */;
-INSERT INTO `my_aspnet_sessions` VALUES ('15ib4b3jn1dfixmfhtinl0c3',1,'2020-12-02 22:50:34','2020-12-02 23:10:59','2020-12-02 22:50:59',12,20,0,_binary '\0\0\0ÿÿÿÿcuserabc\0\0\0\0\0\0nik1260',0),('4v1gcyena1uskxzorxvudhz1',1,'2020-12-02 22:26:40','2020-12-02 22:47:18','2020-12-02 22:27:18',3,20,0,NULL,0),('cmyoij4qbyallpoh4n2mvhkm',1,'2020-12-02 22:28:23','2020-12-02 22:48:23','2020-12-02 22:28:23',1,20,0,NULL,0),('eqkbtdm5ejso54vrxh5djda0',1,'2020-12-02 22:40:50','2020-12-02 23:03:12','2020-12-02 22:43:12',16,20,0,_binary '\0\0\0ÿÿÿÿcuserabc\0\0\0\0\0\0nik12410',0),('fdp01ndu5x3z54g2lfhsiyag',1,'2020-12-02 22:48:13','2020-12-02 23:08:19','2020-12-02 22:48:19',3,20,0,_binary '\0\0\0ÿÿÿÿcuser\0\0\0nik1',0),('l21w4t1dpoeiuko1zau1b3wm',1,'2020-12-02 22:29:29','2020-12-02 22:49:47','2020-12-02 22:29:47',3,20,0,NULL,0),('n3yydthigfc2mcraoeqxekgx',1,'2020-12-02 22:47:13','2020-12-02 23:07:33','2020-12-02 22:47:33',10,20,0,_binary '\0\0\0ÿÿÿÿcuser\0\0\0nik1',0),('ptpocejexkafjytrowofdpli',1,'2020-12-02 22:36:19','2020-12-02 22:56:26','2020-12-02 22:36:26',5,20,0,NULL,0),('qrld5fenk4clfgkclhuibr3r',1,'2020-12-02 22:36:54','2020-12-02 22:57:05','2020-12-02 22:37:05',5,20,0,NULL,0),('tlzfwzxcyb2sks4w4fnsg5y0',1,'2020-12-02 22:28:40','2020-12-02 22:48:53','2020-12-02 22:28:53',2,20,0,NULL,0),('v123attgsquv2lmhmyz3pwap',1,'2020-12-02 22:38:21','2020-12-02 22:58:39','2020-12-02 22:38:39',9,20,0,NULL,0),('vo3e1x0rxdrhra3zbu3sbdhx',1,'2020-12-02 22:29:08','2020-12-02 22:49:09','2020-12-02 22:29:08',1,20,0,NULL,0),('ynkpfzqhpt1wlrq51p5bk2da',1,'2020-12-02 22:30:03','2020-12-02 22:50:19','2020-12-02 22:30:19',10,20,0,NULL,0),('znthmvbid4jfmchzt5cxxenq',1,'2020-12-02 22:43:34','2020-12-02 23:03:35','2020-12-02 22:43:34',1,20,0,NULL,0);
+INSERT INTO `my_aspnet_sessions` VALUES ('h2fsa4q4ihvcpkdcqqlk2e1v',1,'2020-12-15 10:10:28','2020-12-15 10:32:14','2020-12-15 10:12:14',20,20,0,_binary '\0\0\0ÿÿÿÿcuser\0\0\0nik1',0);
 /*!40000 ALTER TABLE `my_aspnet_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,7 +328,7 @@ CREATE TABLE `my_aspnet_users` (
   `isAnonymous` tinyint(1) NOT NULL DEFAULT '1',
   `lastActivityDate` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -337,7 +337,7 @@ CREATE TABLE `my_aspnet_users` (
 
 LOCK TABLES `my_aspnet_users` WRITE;
 /*!40000 ALTER TABLE `my_aspnet_users` DISABLE KEYS */;
-INSERT INTO `my_aspnet_users` VALUES (1,1,'Admin',0,'2020-12-02 17:38:10'),(2,1,'Sadmin',0,'2020-12-02 22:30:20'),(3,1,'nik1',0,'2020-12-02 22:47:28'),(4,1,'nik12',0,'2020-12-02 22:42:49');
+INSERT INTO `my_aspnet_users` VALUES (1,1,'Admin',0,'2020-12-14 18:52:37'),(2,1,'Sadmin',0,'2020-12-05 19:25:40'),(3,1,'nik1',0,'2020-12-15 10:11:59'),(4,1,'nik12',0,'2020-12-14 13:29:08'),(5,1,'Cust1',0,'2020-12-14 13:37:06'),(6,1,'x1',0,'2020-12-14 13:36:18');
 /*!40000 ALTER TABLE `my_aspnet_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -361,7 +361,7 @@ CREATE TABLE `my_aspnet_usersinroles` (
 
 LOCK TABLES `my_aspnet_usersinroles` WRITE;
 /*!40000 ALTER TABLE `my_aspnet_usersinroles` DISABLE KEYS */;
-INSERT INTO `my_aspnet_usersinroles` VALUES (1,2),(2,1),(3,3),(4,3);
+INSERT INTO `my_aspnet_usersinroles` VALUES (1,2),(2,1),(3,3),(4,3),(5,3),(6,3);
 /*!40000 ALTER TABLE `my_aspnet_usersinroles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -374,4 +374,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-02 23:03:20
+-- Dump completed on 2020-12-15 17:06:18

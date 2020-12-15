@@ -47,10 +47,17 @@
         </tr>
         <tr>
             <td colspan="2" style="font-size: 14pt">
-                <span style="color: #000000; font-size: medium;">Show All Verified Cancled Records</span>
+                
+                <table class="nav-justified">
+                    <tr>
+                        <td style="width: 296px"><h4><span>Show All Verified Cancled Records</span></h4></td>
+                        <td>
                 <asp:Button ID="brng2" runat="server" 
                     style="font-size: 14pt; font-family: 'Comic Sans MS'" Text="Go" 
                     BackColor="Maroon" ForeColor="White" OnClick="brng2_Click" />
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
         <tr>
@@ -62,68 +69,122 @@
                     AllowPaging="True" 
                     PageSize="5" ForeColor="#C6A674">
         <Columns>
-            <asp:TemplateField HeaderText="OrderId">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Order Id</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lblorid" runat="server" Text='<%# Eval("order_id") %>' 
                         BackColor="White" style="color: #800000"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Date">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Date</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbldate" runat="server" Text='<%# Eval("Date_Created") %>' 
                         style="color: #800000"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Date Shipped"></asp:TemplateField>
-            <asp:TemplateField HeaderText="Verified">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Verified</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Convert.ToBoolean(Eval("Verified")) %>' 
                         style="color: #800000" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Dilevery Status">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Dilivery Status</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox ID="lblv" runat="server" 
                         Checked='<%# Convert.ToBoolean(Eval("Dilivery_Status")) %>' style="color: #800000" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Payment Dilevery Status">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Payment Status</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox ID="lblpd" runat="server" 
                         Checked='<%# Convert.ToBoolean(Eval("Payment_Dilevery_Status")) %>' style="color: #800000" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Completed">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Completed</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox ID="lblc" runat="server" Checked='<%# Convert.ToBoolean(Eval("Completed")) %>' 
                         style="color: #800000" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cancled">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Canceled</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:CheckBox ID="lblcanc" runat="server" Checked='<%# Convert.ToBoolean(Eval("Cancled")) %>' 
                         style="color: #800000" />
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="CustomerName">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Customer Name</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:Label ID="blname" runat="server" Text='<%# Eval("Coustmer_Name") %>' 
                         style="color: #800000"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="UserName">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>User Name</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbluname" runat="server" Text='<%# Eval("User_Name") %>' 
                         style="color: #800000"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Comment">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Comment</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lblcmn" runat="server" Text='<%# Eval("Comment") %>' 
                         style="color: #800000"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Operations">
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <div style="text-align:center">
+                        <h4>Operations</h4>
+                    </div>
+                </HeaderTemplate>
                 <ItemTemplate>
                     <asp:HyperLink ID="HyperLink1" runat="server" 
                         NavigateUrl='<%# "../Admin/Displayorder.aspx?order_id="+Eval("order_id") %>' 
