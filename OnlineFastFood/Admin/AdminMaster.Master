@@ -55,7 +55,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="HomePage1.aspx"><h1>Online Fast Food</h1></a>
+							<a href="../HomePage1.aspx"><h1>Online Fast Food</h1></a>
 						</div>
 					</div>
                     
@@ -118,7 +118,7 @@
         
         <div class="auto-style2">
             
-            <asp:Menu class="form-control" ID="Menu1" runat="server" BackColor="#DAB273" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt">
+            <asp:Menu class="form-control" ID="Menu1" runat="server" BackColor="#DAB273" EnableViewState="False" ForeColor="White" Orientation="Horizontal" Font-Size="13pt" Width="800px">
                 <Items>
                     
                     <asp:MenuItem NavigateUrl="~/Admin/AdminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>

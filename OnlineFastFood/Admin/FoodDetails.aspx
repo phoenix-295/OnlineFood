@@ -114,10 +114,10 @@
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; width: 205px; height: 33px;">
-                <asp:Button BackColor="#DAB273" ForeColor="White" class="btn btn-success" ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                <h5><asp:Button BackColor="#DAB273" ForeColor="White" ID="btnsubmit" runat="server" Text="Submit" OnClick="btnsubmit_Click" Width="82px" Height="35px" /></h5>
             </td>
             <td style="font-size: 18px; color: #000000; width: 919px; height: 33px;">
-                <asp:Button ForeColor="White" BackColor="#DAB273" class="btn btn-success" ID="btnclear" runat="server" Text="Clear" OnClick="btnclear_Click" CausesValidation="False" />
+                <h5><asp:Button ForeColor="White" BackColor="#DAB273" ID="btnclear" runat="server" Text="Clear" OnClick="btnclear_Click" CausesValidation="False" Width="82px" Height="35px"/></h5>
             </td>
             <td style="height: 33px"></td>
         </tr>
@@ -203,8 +203,8 @@
                             </FooterTemplate>
                             <ItemTemplate>
                                 <div style="vertical-align:central">
-                                <asp:Button class="btn" ForeColor="White" BackColor="#D9AE6A" ID="btnedit" runat="server" CausesValidation="False" CommandName="Update" Text="Edit" />
-                                <asp:Button class="btn" ForeColor="White" BackColor="#D9AE6A" ID="btndelete" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
+                                <h5><span><asp:Button  ForeColor="White" BackColor="#D9AE6A" ID="btnedit" runat="server" CausesValidation="False" CommandName="Update" Text="Edit" Width="82px" Height="35px"/>
+                                <asp:Button ForeColor="White" BackColor="#D9AE6A" ID="btndelete" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" Width="82px" Height="35px"/></span></h5>
                                     </div>
                             </ItemTemplate>
                         </asp:TemplateField>
