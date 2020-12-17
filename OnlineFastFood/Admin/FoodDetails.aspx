@@ -128,7 +128,7 @@
         </tr>
         <tr>
             <td style="font-size: 18px; color: #000000; " colspan="3">
-                <asp:GridView ID="gv1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Item_Code" ForeColor="#C6A674" OnPageIndexChanging="gv1_PageIndexChanging" OnRowDeleting="gv1_RowDeleting" OnRowUpdating="gv1_RowUpdating" PageSize="5" style="color: #000000" Width="885px" Height="199px">
+                <asp:GridView ID="gv1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Item_Code" ForeColor="#C6A674" OnPageIndexChanging="gv1_PageIndexChanging" OnRowDeleting="gv1_RowDeleting" OnRowUpdating="gv1_RowUpdating" PageSize="5" style="color: #000000; font-family: 'Comic Sans MS'" Width="885px" Height="199px">
                     <Columns>
                         <asp:TemplateField>
                             <HeaderTemplate>
