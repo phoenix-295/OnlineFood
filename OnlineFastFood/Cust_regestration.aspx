@@ -126,7 +126,7 @@
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style3">
-                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser" BackColor="#DAB273" ActiveStepIndex="1">
+                        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" Font-Size="Medium" Height="258px" Width="367px" CssClass="auto-style5" OnCreatedUser="CreateUserWizard1_CreatedUser" BackColor="#DAB273">
                     <WizardSteps>
                         <asp:WizardStep runat="server" Title="Reg">
                             <table class="style11">
