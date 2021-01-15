@@ -203,7 +203,6 @@
     <Content Include="Admin\FoodDetails.aspx" />
     <Content Include="Admin\Food_Details_Edit.aspx" />
     <Content Include="Admin\Manage_Orders.aspx" />
-    <Content Include="Admin\Rpt.aspx" />
     <Content Include="App_Data\ASPNetDB.mdb" />
     <Content Include="Category_UC.ascx" />
     <Content Include="Customer\Category_UC.ascx" />
@@ -219,7 +218,6 @@
     <Content Include="Food_Details_Large_UC_Display.aspx" />
     <Content Include="Food_Details_Small_UC.ascx" />
     <Content Include="HomePage1.aspx" />
-    <Content Include="index.html" />
     <Content Include="LoginPage.aspx" />
     <Content Include="Reset_Password.aspx" />
     <Content Include="SiteMap1.aspx" />
@@ -321,13 +319,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Report_By_OrderId.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Admin\Rpt.aspx.cs">
-      <DependentUpon>Rpt.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Rpt.aspx.designer.cs">
-      <DependentUpon>Rpt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Category_UC.ascx.cs">
       <DependentUpon>Category_UC.ascx</DependentUpon>
@@ -515,6 +506,8 @@
     <None Include="packages.config" />
     <Content Include="SuperAdmin\SuperAdminMaster.Master" />
     <Content Include="SuperAdmin\Web.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
