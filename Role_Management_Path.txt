@@ -5,3 +5,20 @@ iisexpress.exe /path:"C:\Windows\Microsoft.NET\Framework\v4.0.30319\ASP.NETWebAd
 
 
 http://localhost:63858/WebAdmin/default.aspx?applicationPhysicalPath=D:\FastFoodGit\OnlineFood\OnlineFastFood&applicationUrl=/AppAdmin
+
+
+
+Admin
+admin1!
+
+Sadmin
+sadmin!
+
+nik1
+nikhil!
+
+Cust1
+cust1234!
+
+x1
+nik123!
